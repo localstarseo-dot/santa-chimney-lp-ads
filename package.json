@@ -1,0 +1,11 @@
+{
+  "name": "santa-chimney-lp-ads",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Santa Chimney landing page staging and Gutenberg source",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "validate": "node scripts/validate.mjs",
+    "preview": "node scripts/preview.mjs"
+  }
+}

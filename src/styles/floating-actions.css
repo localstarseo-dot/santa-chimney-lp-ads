@@ -1,0 +1,74 @@
+/* Reserve space so the floating bar does not cover the footer. */
+body:has(.sc-ads-float-actions) {
+  padding-bottom: calc(62px + env(safe-area-inset-bottom));
+}
+.sc-ads-float-actions {
+  position: fixed;
+  z-index: 99999;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding-bottom: env(safe-area-inset-bottom);
+  background: #111619;
+  box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.3);
+}
+.sc-ads-float-actions, .sc-ads-float-actions * { box-sizing: border-box; }
+.sc-ads-float-actions__button {
+  display: flex;
+  min-width: 0;
+  min-height: 62px;
+  padding: 0.75rem 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  border: 0;
+  border-radius: 0;
+  color: #ffffff;
+  font-family: var(--scs-font-body, Arial, sans-serif);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+.sc-ads-float-actions__button svg {
+  display: block;
+  width: 21px;
+  height: 21px;
+  flex: 0 0 21px;
+}
+.sc-ads-float-actions__button--call { background: #c91b20; }
+.sc-ads-float-actions__button--call:hover { background: #a91519; }
+.sc-ads-float-actions__button--booking {
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+  background: #111619;
+}
+.sc-ads-float-actions__button--booking:hover { background: #252b2e; }
+.sc-ads-float-actions__button:focus-visible {
+  z-index: 1;
+  outline: 3px solid #f0b866;
+  outline-offset: -4px;
+}
+@media (max-width: 640px) {
+  body:has(.sc-ads-float-actions) {
+    padding-bottom: calc(58px + env(safe-area-inset-bottom));
+  }
+  .sc-ads-float-actions__button {
+    min-height: 58px;
+    padding-inline: 0.6rem;
+    gap: 0.45rem;
+    font-size: 0.82rem;
+  }
+  .sc-ads-float-actions__button svg { width: 18px; height: 18px; flex-basis: 18px; }
+}
+@media (max-width: 360px) {
+  .sc-ads-float-actions__button { padding-inline: 0.4rem; font-size: 0.74rem; }
+  .sc-ads-float-actions__button svg { width: 16px; height: 16px; flex-basis: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sc-ads-float-actions__button { transition: none; }
+}

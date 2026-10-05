@@ -1,0 +1,340 @@
+.sc-ppc-header-system {
+  --sc-ppc-red: #bb1b1c;
+  --sc-ppc-ink: #17191a;
+  --sc-ppc-admin: 0px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  color: var(--sc-ppc-ink);
+  font: 400 14px/1.3 system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+.sc-ppc-header-system *,
+.sc-ppc-header-system *::before,
+.sc-ppc-header-system *::after { box-sizing: border-box; }
+.sc-ppc-header-system [hidden] { display: none !important; }
+.sc-ppc-header-system .sc-ppc-shell,
+.sc-ppc-header-system .sc-ppc-lead,
+.sc-ppc-header-system .sc-ppc-form {
+  margin: 0;
+  max-width: none;
+}
+.sc-ppc-header-system .sc-ppc-shell {
+  background: #fff;
+  border-bottom: 2px solid var(--sc-ppc-red);
+}
+.sc-ppc-header-system.is-ready { height: var(--sc-ppc-slot); }
+.sc-ppc-header-system.is-ready .sc-ppc-shell {
+  position: fixed;
+  z-index: 99990;
+  inset: var(--sc-ppc-admin) 0 auto;
+  width: 100%;
+  max-height: calc(100dvh - var(--sc-ppc-admin));
+  overflow: auto;
+  overscroll-behavior: contain;
+  box-shadow: 0 4px 14px #00000014;
+}
+.sc-ppc-header-system .sc-ppc-offer-bar {
+  display: flex;
+  min-height: 36px;
+  margin: 0;
+  padding: 6px 12px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  background: var(--sc-ppc-red);
+  color: #fff;
+  font-size: 12px;
+}
+.sc-ppc-header-system .sc-ppc-offer-copy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.sc-ppc-header-system .sc-ppc-offer-copy--mobile { display: none; }
+.sc-ppc-header-system .sc-ppc-reservation {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.sc-ppc-header-system [data-sc-timer] {
+  min-width: 5ch;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .04em;
+}
+.sc-ppc-header-system .sc-ppc-offer-bar a { color: #fff; }
+.sc-ppc-header-system .sc-ppc-nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: min(1320px, calc(100% - 32px));
+  min-height: 72px;
+  margin: auto;
+  padding: 7px 0;
+}
+.sc-ppc-header-system .sc-ppc-logo { flex: 0 0 auto; line-height: 0; }
+.sc-ppc-header-system .sc-ppc-logo img {
+  display: block;
+  width: 138px;
+  height: auto;
+  max-width: 100%;
+}
+.sc-ppc-header-system .sc-ppc-links {
+  display: flex;
+  margin-left: auto;
+  gap: 8px;
+}
+.sc-ppc-header-system .sc-ppc-links a,
+.sc-ppc-header-system .sc-ppc-call {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  color: var(--sc-ppc-ink);
+  font-weight: 750;
+  text-decoration: none;
+}
+.sc-ppc-header-system .sc-ppc-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid var(--sc-ppc-red);
+  border-radius: 8px;
+  background: var(--sc-ppc-red);
+  color: #fff;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+}
+.sc-ppc-header-system .sc-ppc-lead { display: none; }
+.sc-ppc-header-system.is-past-hero .sc-ppc-nav { display: none; }
+.sc-ppc-header-system.is-past-hero .sc-ppc-lead {
+  display: grid;
+  grid-template-columns: 175px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  width: min(1320px, calc(100% - 32px));
+  margin: auto;
+  padding: 8px 0;
+}
+.sc-ppc-header-system .sc-ppc-sticky-offer {
+  display: grid;
+  gap: 1px;
+  align-self: center;
+  align-content: center;
+  overflow-wrap: anywhere;
+}
+.sc-ppc-header-system .sc-ppc-sticky-offer strong {
+  color: var(--sc-ppc-red);
+  font-size: 20px;
+  line-height: 1.1;
+}
+.sc-ppc-header-system .sc-ppc-desktop-form-label {
+  font-size: 14px !important;
+  line-height: 1.15 !important;
+  white-space: nowrap;
+}
+.sc-ppc-header-system .sc-ppc-mobile-form-offer { display: none; }
+.sc-ppc-header-system .sc-ppc-sticky-offer span { font-size: 12px; font-weight: 750; line-height: 1.2; }
+.sc-ppc-header-system .sc-ppc-sticky-offer small { color: #5b6064; font-size: 10px; line-height: 1.1; }
+.sc-ppc-header-system .sc-ppc-form { min-width: 0; }
+
+/* Form 4877: Simple Name (name-1), Phone (phone-1), each in its own row. */
+.sc-ppc-header-system .sc-ppc-form #forminator-module-4877:not([hidden]):not([style*="display: none"]):not([style*="display:none"]) {
+  display: grid !important;
+}
+.sc-ppc-header-system .sc-ppc-form #forminator-module-4877 {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(130px, .8fr);
+  align-items: start;
+  gap: 4px 10px;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.sc-ppc-header-system #forminator-module-4877 > .forminator-row,
+.sc-ppc-header-system #forminator-module-4877 > .forminator-response-message {
+  grid-column: 1 / -1;
+  min-width: 0;
+  margin: 0 !important;
+}
+/* Form 4877 adds a section title and hidden-input paragraphs that otherwise
+   create extra grid rows inside the compact sticky bar. Keep the real fields. */
+.sc-ppc-header-system #forminator-module-4877 > .forminator-row:has(#section-1),
+.sc-ppc-header-system #forminator-module-4877 > p:empty,
+.sc-ppc-header-system #forminator-module-4877 > p:has(> input[type="hidden"]) {
+  display: none !important;
+}
+.sc-ppc-header-system #forminator-module-4877 > .forminator-row:has(#name-1) { grid-area: 1 / 1; }
+.sc-ppc-header-system #forminator-module-4877 > .forminator-row:has(#phone-1) { grid-area: 1 / 2; }
+.sc-ppc-header-system #forminator-module-4877 > .forminator-row-last { grid-area: 1 / 3; }
+.sc-ppc-header-system #forminator-module-4877 .forminator-col {
+  min-width: 0;
+  padding: 0 !important;
+}
+.sc-ppc-header-system #forminator-module-4877 #name-1,
+.sc-ppc-header-system #forminator-module-4877 #phone-1,
+.sc-ppc-header-system #forminator-module-4877 .forminator-row-last > .forminator-col {
+  width: 100% !important;
+  flex: 1 1 100% !important;
+}
+.sc-ppc-header-system #forminator-module-4877 .forminator-input {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 44px !important;
+  margin: 0 !important;
+  padding: 10px !important;
+  border: 1px solid #8d969e !important;
+  border-radius: 6px !important;
+  background: #fff !important;
+  color: #17191a !important;
+  font: 400 16px/1.25 system-ui, -apple-system, "Segoe UI", Arial, sans-serif !important;
+}
+.sc-ppc-header-system #forminator-module-4877 .forminator-input::placeholder { color: #555e65; opacity: 1; }
+#sc-ppc-header #forminator-module-4877 .forminator-button-submit {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  min-height: 44px !important;
+  margin: 0 !important;
+  padding: 10px !important;
+  border: 1px solid var(--sc-ppc-red) !important;
+  border-radius: 7px !important;
+  background: var(--sc-ppc-red) !important;
+  color: #fff !important;
+  font: 800 13px/1.25 system-ui, -apple-system, "Segoe UI", Arial, sans-serif !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  box-shadow: none !important;
+}
+.sc-ppc-header-system .sc-ppc-sr,
+.sc-ppc-header-system #forminator-module-4877 #name-1 > .forminator-field > .forminator-label,
+.sc-ppc-header-system #forminator-module-4877 #phone-1 > .forminator-field > .forminator-label {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+}
+.sc-ppc-header-system #forminator-module-4877 .forminator-error-message {
+  display: block;
+  margin: 3px 0 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-size: 11px !important;
+  line-height: 1.2 !important;
+  overflow-wrap: anywhere;
+}
+.sc-ppc-header-system #forminator-module-4877 .forminator-error-message:empty {
+  display: none !important;
+}
+.sc-ppc-header-system #forminator-module-4877 > .forminator-response-message.forminator-error {
+  padding: 6px 8px !important;
+  border-left: 2px solid var(--sc-ppc-red) !important;
+  font-size: 11px !important;
+  line-height: 1.25 !important;
+}
+.sc-ppc-header-system a:focus-visible,
+.sc-ppc-header-system #forminator-module-4877 :is(input, button):focus-visible {
+  outline: 3px solid #175ab1 !important;
+  outline-offset: 2px;
+}
+.sc-ppc-header-system .sc-ppc-offer-bar a:focus-visible { outline-color: #fff !important; }
+.sc-ppc-header-system .sc-ppc-button:hover,
+.sc-ppc-header-system #forminator-module-4877 .forminator-button-submit:hover { filter: brightness(.88); }
+.sc-ppc-header-system .sc-ppc-claimed-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  grid-column: 1 / -1;
+}
+.sc-ppc-header-system.is-claimed .sc-ppc-sticky-offer { display: none; }
+.sc-ppc-header-system.is-claimed .sc-ppc-form { grid-column: 1 / -1; }
+.sc-ppc-header-system.is-claimed #forminator-module-4877 > .forminator-row { display: none !important; }
+
+/* The regular nav Call Us button is redundant on desktop; the sticky form CTA remains. */
+@media (min-width: 768px) {
+  .sc-ppc-header-system .sc-ppc-nav > .sc-ppc-nav-inner > .sc-ppc-button { display: none; }
+}
+
+@media (max-width: 1023px) {
+  .sc-ppc-header-system.is-past-hero .sc-ppc-lead { grid-template-columns: 112px minmax(0, 1fr); gap: 10px; }
+}
+@media (max-width: 767px) {
+  .sc-ppc-header-system .sc-ppc-offer-bar { min-height: 32px; gap: 8px; padding: 5px 8px; font-size: 11px; }
+  .sc-ppc-header-system .sc-ppc-offer-copy--desktop { display: none; }
+  .sc-ppc-header-system .sc-ppc-offer-copy--mobile { display: inline-flex; }
+  .sc-ppc-header-system .sc-ppc-nav-inner { width: calc(100% - 16px); min-height: 64px; gap: 4px; }
+  .sc-ppc-header-system .sc-ppc-logo img { width: 112px; }
+  .sc-ppc-header-system .sc-ppc-home-link { display: none !important; }
+  .sc-ppc-header-system .sc-ppc-links { gap: 0; }
+  .sc-ppc-header-system .sc-ppc-links a { padding-inline: 5px; font-size: 11px; }
+  .sc-ppc-header-system .sc-ppc-nav .sc-ppc-button { padding: 8px; font-size: 11px; }
+  .sc-ppc-header-system.is-past-hero .sc-ppc-lead {
+    width: calc(100% - 16px);
+    grid-template-columns: 64px minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+  }
+  .sc-ppc-header-system .sc-ppc-sticky-offer {
+    height: 92px;
+    justify-content: center;
+    align-self: center;
+  }
+  .sc-ppc-header-system .sc-ppc-desktop-form-label { display: none; }
+  .sc-ppc-header-system .sc-ppc-mobile-form-offer { display: block; }
+  .sc-ppc-header-system .sc-ppc-sticky-offer strong { font-size: 17px; line-height: 1; }
+  .sc-ppc-header-system .sc-ppc-sticky-offer span { font-size: 11px; line-height: 1.08; }
+  .sc-ppc-header-system .sc-ppc-form #forminator-module-4877 {
+    grid-template-columns: minmax(0, 1fr) 76px;
+    gap: 4px 6px;
+  }
+  .sc-ppc-header-system #forminator-module-4877 > .forminator-row:has(#name-1) { grid-area: 1 / 1; }
+  .sc-ppc-header-system #forminator-module-4877 > .forminator-row:has(#phone-1) { grid-area: 2 / 1; }
+  .sc-ppc-header-system #forminator-module-4877 > .forminator-row-last { grid-area: 1 / 2 / span 2; }
+  #sc-ppc-header #forminator-module-4877 .forminator-button-submit {
+    display: flex !important;
+    min-height: 92px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 6px 4px !important;
+    font-size: 12px !important;
+    line-height: 1.15 !important;
+    text-align: center !important;
+  }
+  /* Visible CAPTCHA needs the full available width; never clip its challenge. */
+  .sc-ppc-header-system .sc-ppc-lead:has(#forminator-module-4877 .forminator-field-captcha) .sc-ppc-form { grid-column: 1 / -1; }
+}
+@media (max-width: 359px) {
+  .sc-ppc-header-system .sc-ppc-logo img { width: 96px; }
+  .sc-ppc-header-system .sc-ppc-links a { padding-inline: 4px; font-size: 10px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .sc-ppc-header-system.is-past-hero .sc-ppc-lead { animation: scPpcReveal 140ms ease-out; }
+  @keyframes scPpcReveal { from { opacity: .65; transform: translateY(-3px); } to { opacity: 1; transform: translateY(0); } }
+  #sc-ppc-header.is-past-hero #forminator-module-4877 .forminator-button-submit {
+    animation: scPpcClaimPulse 1.2s ease-in-out infinite;
+  }
+  @keyframes scPpcClaimPulse {
+    0%, 72%, 100% { transform: translateY(0) scale(1); }
+    82% { transform: translateY(-1px) scale(1.018); }
+    90% { transform: translateY(0) scale(1); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #sc-ppc-header #forminator-module-4877 .forminator-button-submit,
+  #sc-ppc-header .sc-ppc-lead { animation: none !important; }
+}
