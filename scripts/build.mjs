@@ -48,6 +48,7 @@ const document = (title, body, page = false) => `<!doctype html>
   <link rel="stylesheet" href="${page ? '../' : ''}assets/css/preview.css">
   ${page ? '<link rel="stylesheet" href="../assets/css/shared.css">' : ''}
   ${page ? '<script src="../assets/js/header.js" defer></script>\n  <script src="../assets/js/voucher-modal.js" defer></script>\n  <script src="../assets/js/preview-forms.js" defer></script>' : ''}
+  ${page ? '<script src="../assets/js/service-stats.js" defer></script>\n  <script src="../assets/js/comparison.js" defer></script>\n  <script src="../assets/js/google-reviews.js" defer></script>\n  <script src="../assets/js/hero-slideshow.js" defer></script>' : ''}
 </head>
 <body class="sc-staging-site" data-sc-staging="true">
 ${body}
@@ -55,13 +56,14 @@ ${body}
 </html>
 `;
 
-write('lp-1/index.html', document('Santa Chimney | LP 1 component preview', header + '\n' + read('src/pages/lp-1.html') + '\n' + clean(footerSource) + '\n' + clean(floatingSource) + '\n' + modal, true));
+const pageBody = read('src/pages/lp-1.html');
+write('lp-1/index.html', document('Santa Chimney | LP 1 Chimney Repair staging', header + '\n' + pageBody + '\n' + clean(footerSource) + '\n' + clean(floatingSource) + '\n' + modal, true));
 write('index.html', document('Santa Chimney | Landing page staging', `<main class="sc-staging-preview"><section class="sc-staging-preview__section">
   <p class="sc-staging-preview__eyebrow">Santa Chimney · Ads landing pages</p>
   <h1>Landing page staging</h1>
   <p>Review the supplied components and each landing page as it is assembled.</p>
   <ul class="sc-staging-preview__variants">
-    <li><a href="lp-1/">LP 1</a> · Header, sticky voucher form, popup, footer, and floating actions preview. Page body pending.</li>
+    <li><a href="lp-1/">LP 1 · Chimney Repair</a> · Repair-first photo hero, problem cards, before/after sliders, repair proof, dark automatic reviews, service directory, FAQs, and shared footer. Hero, sticky voucher, and fixed call/booking actions remain. Staging preview only.</li>
     <li>LP 2 · Awaiting supplied page code.</li>
     <li>LP 3 · Awaiting supplied page code.</li>
     <li>LP 4 · Awaiting supplied page code.</li>
@@ -70,6 +72,6 @@ write('index.html', document('Santa Chimney | Landing page staging', `<main clas
 </section></main>`));
 write('assets/css/shared.css', ['shared.css', 'footer.css', 'floating-actions.css'].map(file => read('src/styles/' + file)).join('\n\n'));
 write('assets/css/preview.css', read('src/styles/preview.css'));
-for (const file of ['header.js', 'voucher-modal.js', 'preview-forms.js']) write('assets/js/' + file, read('src/scripts/' + file));
+for (const file of ['header.js', 'voucher-modal.js', 'preview-forms.js', 'service-stats.js', 'comparison.js', 'google-reviews.js', 'hero-slideshow.js']) write('assets/js/' + file, read('src/scripts/' + file));
 write('wordpress/header-and-popup.gutenberg.html', headerSource + '\n' + modalSource);
-console.log('Built staging dashboard, LP 1 global components, and shared assets.');
+console.log('Built staging dashboard, LP 1 sections, global components, and assets.');

@@ -1,0 +1,1235 @@
+<style id="scs-additional-services-v4-styles">
+  /* =========================================================
+     SANTA CHIMNEY SWEEP
+     FEATURED FIREPLACE, WOOD STOVE AND DRYER VENT SERVICES
+     ========================================================= */
+
+  #fireplace-additional-services {
+    --scs-as-red: #c9202f;
+    --scs-as-red-dark: #98151f;
+    --scs-as-amber: #f0b866;
+    --scs-as-muted: #b9bec2;
+    --scs-as-card: #101416;
+    --scs-as-panel: #151a1d;
+    --scs-as-border: rgba(255, 255, 255, 0.13);
+    --scs-as-container: 1180px;
+
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: clamp(72px, 8vw, 112px) 0;
+    overflow: hidden;
+    color: #ffffff;
+    background:
+      radial-gradient(
+        circle at 100% 0%,
+        rgba(201, 32, 47, 0.19),
+        transparent 31%
+      ),
+      linear-gradient(135deg, #080b0d, #111518 58%, #180e10);
+  }
+
+  #fireplace-additional-services,
+  #fireplace-additional-services *,
+  #fireplace-additional-services *::before,
+  #fireplace-additional-services *::after {
+    box-sizing: border-box;
+  }
+
+  #fireplace-additional-services::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-image:
+      linear-gradient(
+        rgba(255, 255, 255, 0.028) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.028) 1px,
+        transparent 1px
+      );
+    background-size: 54px 54px;
+    content: "";
+    pointer-events: none;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__container {
+    width: min(calc(100% - 48px), var(--scs-as-container));
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  /* =========================================================
+     SECTION HEADING
+     ========================================================= */
+
+  #fireplace-additional-services
+    .scs-additional-services__heading {
+    display: grid;
+    max-width: 850px;
+    margin: 0 auto clamp(42px, 6vw, 64px);
+    justify-items: center;
+    text-align: center;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__eyebrow {
+    display: inline-flex;
+    margin: 0 0 13px;
+    align-items: center;
+    gap: 10px;
+    color: var(--scs-as-amber);
+    font-size: 12px;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__eyebrow::before,
+  #fireplace-additional-services
+    .scs-additional-services__eyebrow::after {
+    width: 24px;
+    height: 2px;
+    flex: 0 0 auto;
+    background: currentColor;
+    content: "";
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__heading h2 {
+    max-width: 840px;
+    margin: 0;
+    color: #ffffff;
+    font-family: var(--scs-font-heading, "Roboto Slab", Georgia, serif);
+    font-size: clamp(35px, 4.8vw, 56px);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__heading p {
+    max-width: 730px;
+    margin: 18px 0 0;
+    color: var(--scs-as-muted);
+    font-size: clamp(16px, 1.8vw, 18px);
+    line-height: 1.7;
+  }
+
+  /* =========================================================
+     SERVICE GROUPS
+     ========================================================= */
+
+  #fireplace-additional-services
+    .scs-additional-services__groups {
+    display: grid;
+    gap: clamp(28px, 5vw, 48px);
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__group {
+    position: relative;
+    min-width: 0;
+    padding: clamp(24px, 4vw, 38px);
+    overflow: hidden;
+    background: rgba(21, 26, 29, 0.92);
+    border: 1px solid var(--scs-as-border);
+    border-radius: 24px;
+    box-shadow: 0 20px 54px rgba(0, 0, 0, 0.23);
+    scroll-margin-top: 110px;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__group::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      var(--scs-as-red),
+      var(--scs-as-amber)
+    );
+    content: "";
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__group-head {
+    display: grid;
+    min-width: 0;
+    margin-bottom: 26px;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 16px;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__group-icon {
+    display: grid;
+    width: 54px;
+    height: 54px;
+    color: #ffffff;
+    background: linear-gradient(
+      135deg,
+      #df3542,
+      var(--scs-as-red-dark)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.17);
+    border-radius: 16px;
+    box-shadow: 0 11px 25px rgba(201, 32, 47, 0.27);
+    place-items: center;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__group-icon svg {
+    display: block;
+    width: 27px;
+    height: 27px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__group-head small {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--scs-as-amber);
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__group-head h3 {
+    margin: 0;
+    color: #ffffff;
+    font-family: var(--scs-font-heading, "Roboto Slab", Georgia, serif);
+    font-size: clamp(25px, 3vw, 35px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__group-head p {
+    max-width: 720px;
+    margin: 7px 0 0;
+    color: var(--scs-as-muted);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* =========================================================
+     FIREPLACE CARDS
+     ========================================================= */
+
+  #fireplace-additional-services
+    .scs-additional-services__fireplace-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__card {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    color: #ffffff;
+    background: var(--scs-as-card);
+    border: 1px solid var(--scs-as-border);
+    border-radius: 18px;
+    text-decoration: none;
+    transition:
+      border-color 220ms ease,
+      box-shadow 260ms ease,
+      transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__card:visited,
+  #fireplace-additional-services
+    .scs-additional-services__stove:visited,
+  #fireplace-additional-services
+    .scs-additional-services__dryer:visited {
+    color: #ffffff;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    flex: 0 0 auto;
+    overflow: hidden;
+    background: #25292c;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__media img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: 100% !important;
+    margin: 0;
+    object-fit: cover;
+    object-position: center;
+    transition:
+      filter 300ms ease,
+      transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__card--repair
+    .scs-additional-services__media img,
+  #fireplace-additional-services
+    .scs-additional-services__card--cleaning
+    .scs-additional-services__media img {
+    object-position: center 52%;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__card--installation
+    .scs-additional-services__media img {
+    object-position: center 45%;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__media::after {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(6, 8, 9, 0.01),
+      rgba(6, 8, 9, 0.56)
+    );
+    content: "";
+    pointer-events: none;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__card-icon {
+    position: absolute;
+    z-index: 2;
+    right: 16px;
+    bottom: 15px;
+    display: grid;
+    width: 46px;
+    height: 46px;
+    color: #ffffff;
+    background: var(--scs-as-red);
+    border: 2px solid rgba(255, 255, 255, 0.74);
+    border-radius: 14px;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.27);
+    place-items: center;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__card-icon svg {
+    display: block;
+    width: 23px;
+    height: 23px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__card-body {
+    display: flex;
+    min-width: 0;
+    flex: 1;
+    padding: 22px;
+    flex-direction: column;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__card h4,
+  #fireplace-additional-services
+    .scs-additional-services__stove h4,
+  #fireplace-additional-services
+    .scs-additional-services__dryer h4 {
+    margin: 0;
+    color: #ffffff;
+    font-family: var(--scs-font-heading, "Roboto Slab", Georgia, serif);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__card h4 {
+    font-size: clamp(20px, 2vw, 24px);
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__card p {
+    margin: 11px 0 0;
+    color: var(--scs-as-muted);
+    font-size: 14px;
+    line-height: 1.67;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__learn {
+    display: flex;
+    margin-top: auto;
+    padding-top: 18px;
+    align-items: center;
+    gap: 8px;
+    color: var(--scs-as-amber);
+    font-size: 13px;
+    font-weight: 850;
+    line-height: 1.35;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__learn svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 200ms ease;
+  }
+
+  /* =========================================================
+     WOOD STOVE FEATURE
+     ========================================================= */
+
+  #fireplace-additional-services
+    .scs-additional-services__stove {
+    position: relative;
+    display: grid;
+    width: 100%;
+    min-height: 270px;
+    max-height: 350px;
+    margin-top: 20px;
+    grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
+    overflow: hidden;
+    color: #ffffff;
+    background:
+      radial-gradient(
+        circle at 90% 120%,
+        rgba(201, 32, 47, 0.23),
+        transparent 40%
+      ),
+      var(--scs-as-card);
+    border: 1px solid var(--scs-as-border);
+    border-radius: 18px;
+    text-decoration: none;
+    transition:
+      border-color 220ms ease,
+      box-shadow 260ms ease,
+      transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__stove-media {
+    position: relative;
+    min-width: 0;
+    height: 100%;
+    min-height: 270px;
+    max-height: 350px;
+    overflow: hidden;
+    background: #25292c;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__stove-media img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: 100% !important;
+    margin: 0;
+    object-fit: cover;
+    object-position: center 50%;
+    transition:
+      filter 300ms ease,
+      transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__stove-media::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 55%,
+      var(--scs-as-card)
+    );
+    content: "";
+    pointer-events: none;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__stove-content {
+    display: flex;
+    min-width: 0;
+    padding: clamp(25px, 4vw, 38px);
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__stove-content small,
+  #fireplace-additional-services
+    .scs-additional-services__dryer-content small {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--scs-as-amber);
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 0.11em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__stove h4 {
+    font-size: clamp(25px, 3vw, 34px);
+    letter-spacing: -0.03em;
+    line-height: 1.14;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__stove p {
+    max-width: 590px;
+    margin: 11px 0 0;
+    color: var(--scs-as-muted);
+    font-size: 15px;
+    line-height: 1.68;
+  }
+
+  /* =========================================================
+     DRYER VENT FEATURE
+     ========================================================= */
+
+  #fireplace-additional-services
+    .scs-additional-services__dryer {
+    position: relative;
+    display: grid;
+    width: 100%;
+    min-height: 280px;
+    max-height: 350px;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+    overflow: hidden;
+    color: #ffffff;
+    background:
+      radial-gradient(
+        circle at 8% 110%,
+        rgba(201, 32, 47, 0.3),
+        transparent 40%
+      ),
+      var(--scs-as-card);
+    border: 1px solid var(--scs-as-border);
+    border-radius: 18px;
+    text-decoration: none;
+    transition:
+      border-color 220ms ease,
+      box-shadow 260ms ease,
+      transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__dryer-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    min-width: 0;
+    padding: clamp(27px, 4.5vw, 44px);
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__dryer h4 {
+    font-size: clamp(27px, 3.5vw, 40px);
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__dryer p {
+    max-width: 590px;
+    margin: 12px 0 0;
+    color: var(--scs-as-muted);
+    font-size: 15px;
+    line-height: 1.68;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__dryer-media {
+    position: relative;
+    min-width: 0;
+    height: 100%;
+    min-height: 280px;
+    max-height: 350px;
+    overflow: hidden;
+    background: #25292c;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__dryer-media img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: 100% !important;
+    margin: 0;
+    object-fit: cover;
+    object-position: center;
+    transition:
+      filter 300ms ease,
+      transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__dryer-media::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      var(--scs-as-card) 0%,
+      rgba(16, 20, 22, 0.42) 32%,
+      transparent 70%
+    );
+    content: "";
+    pointer-events: none;
+  }
+
+  /* =========================================================
+     BOOKING CTA
+     ========================================================= */
+
+  #fireplace-additional-services
+    .scs-additional-services__cta {
+    display: grid;
+    min-width: 0;
+    margin-top: clamp(30px, 4vw, 44px);
+    padding: clamp(24px, 3.5vw, 34px);
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 22px;
+    color: #ffffff;
+    background: linear-gradient(
+      120deg,
+      var(--scs-as-red-dark),
+      var(--scs-as-red)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 20px;
+    box-shadow: 0 18px 42px rgba(201, 32, 47, 0.22);
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__cta strong {
+    display: block;
+    color: #ffffff;
+    font-family: var(--scs-font-heading, "Roboto Slab", Georgia, serif);
+    font-size: clamp(21px, 2.6vw, 30px);
+    line-height: 1.18;
+    overflow-wrap: anywhere;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__cta p {
+    max-width: 680px;
+    margin: 6px 0 0;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__cta-button {
+    display: inline-flex;
+    min-height: 52px;
+    padding: 13px 19px;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    color: var(--scs-as-red-dark);
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 11px;
+    box-shadow: 0 13px 27px rgba(78, 5, 12, 0.22);
+    font-size: 14px;
+    font-weight: 850;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+      box-shadow 180ms ease,
+      transform 180ms ease;
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__cta-button:visited {
+    color: var(--scs-as-red-dark);
+  }
+
+  #fireplace-additional-services
+    .scs-additional-services__cta-button svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* =========================================================
+     INTERACTIONS
+     ========================================================= */
+
+  @media (hover: hover) and (pointer: fine) {
+    #fireplace-additional-services
+      .scs-additional-services__card:hover,
+    #fireplace-additional-services
+      .scs-additional-services__stove:hover,
+    #fireplace-additional-services
+      .scs-additional-services__dryer:hover {
+      color: #ffffff;
+      border-color: rgba(240, 184, 102, 0.42);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.31);
+      transform: translateY(-5px);
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__card:hover img,
+    #fireplace-additional-services
+      .scs-additional-services__stove:hover img,
+    #fireplace-additional-services
+      .scs-additional-services__dryer:hover img {
+      filter: saturate(1.08) contrast(1.02);
+      transform: scale(1.05);
+    }
+
+    #fireplace-additional-services
+      a:hover
+      .scs-additional-services__learn svg {
+      transform: translateX(4px);
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__cta-button:hover {
+      color: var(--scs-as-red-dark);
+      box-shadow: 0 17px 35px rgba(78, 5, 12, 0.3);
+      transform: translateY(-2px);
+    }
+  }
+
+  #fireplace-additional-services a:focus-visible {
+    outline: 3px solid var(--scs-as-amber);
+    outline-offset: 4px;
+  }
+
+  /* =========================================================
+     TABLET
+     ========================================================= */
+
+  @media (max-width: 900px) {
+    #fireplace-additional-services
+      .scs-additional-services__fireplace-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__fireplace-grid
+      .scs-additional-services__card:last-child {
+      grid-column: 1 / -1;
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__stove,
+    #fireplace-additional-services
+      .scs-additional-services__dryer {
+      min-height: 300px;
+      max-height: 390px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__stove-media,
+    #fireplace-additional-services
+      .scs-additional-services__dryer-media {
+      min-height: 300px;
+      max-height: 390px;
+    }
+  }
+
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+
+  @media (max-width: 620px) {
+    #fireplace-additional-services {
+      padding: 64px 0;
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__container {
+      width: min(calc(100% - 28px), var(--scs-as-container));
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__heading {
+      margin-bottom: 36px;
+      justify-items: start;
+      text-align: left;
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__eyebrow::after {
+      display: none;
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__heading h2 {
+      font-size: clamp(34px, 10vw, 44px);
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__group {
+      padding: 21px;
+      border-radius: 19px;
+      scroll-margin-top: 90px;
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__group-head {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 12px;
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__group-icon {
+      width: 48px;
+      height: 48px;
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__group-head h3 {
+      font-size: 25px;
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__fireplace-grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__fireplace-grid
+      .scs-additional-services__card:last-child {
+      grid-column: auto;
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__card {
+      border-radius: 16px;
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__media {
+      aspect-ratio: 16 / 9;
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__stove,
+    #fireplace-additional-services
+      .scs-additional-services__dryer {
+      display: flex;
+      min-height: 0;
+      max-height: none;
+      flex-direction: column;
+      border-radius: 16px;
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__stove-media,
+    #fireplace-additional-services
+      .scs-additional-services__dryer-media {
+      order: -1;
+      width: 100%;
+      height: auto;
+      min-height: 0;
+      max-height: none;
+      aspect-ratio: 16 / 10;
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__stove-media::after,
+    #fireplace-additional-services
+      .scs-additional-services__dryer-media::after {
+      background: linear-gradient(
+        180deg,
+        transparent 50%,
+        var(--scs-as-card)
+      );
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__stove-content,
+    #fireplace-additional-services
+      .scs-additional-services__dryer-content {
+      padding: 24px 21px;
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__cta {
+      padding: 24px 21px;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
+      border-radius: 17px;
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__cta-button {
+      width: 100%;
+      white-space: normal;
+    }
+  }
+
+  @media (max-width: 420px) {
+    #fireplace-additional-services
+      .scs-additional-services__container {
+      width: min(calc(100% - 22px), var(--scs-as-container));
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__group {
+      padding: 18px;
+    }
+
+    #fireplace-additional-services
+      .scs-additional-services__card-body {
+      padding: 19px;
+    }
+  }
+
+  /* =========================================================
+     REDUCED MOTION
+     ========================================================= */
+
+  @media (prefers-reduced-motion: reduce) {
+    #fireplace-additional-services a,
+    #fireplace-additional-services img,
+    #fireplace-additional-services
+      .scs-additional-services__learn svg {
+      transition: none !important;
+      transform: none !important;
+    }
+  }
+</style>
+
+
+<!--
+  Santa Chimney Sweep
+  Services Hub — Featured Fireplace, Wood Stove and Dryer Vent Services
+-->
+
+<section class="scs-lp scs-additional-services" id="fireplace-additional-services" aria-labelledby="scs-additional-services-title">
+  <div class="scs-additional-services__container">
+
+    <header class="scs-additional-services__heading">
+      <span class="scs-additional-services__eyebrow">
+        Featured Home Services
+      </span>
+
+      <h2 id="scs-additional-services-title">
+        Fireplace, Wood Stove &amp; Dryer Vent Services in Austin
+      </h2>
+
+      <p>
+        Take a closer look at our fireplace, wood stove, and dryer vent
+        services. Choose the service that best matches the unit or exhaust
+        system that needs attention.
+      </p>
+    </header>
+
+    <div class="scs-additional-services__groups">
+
+      <!-- =====================================================
+           FIREPLACE AND WOOD STOVE SERVICES
+           ===================================================== -->
+
+      <section class="scs-additional-services__group" id="scs-featured-hearth-services" aria-labelledby="scs-featured-hearth-services-title">
+        <header class="scs-additional-services__group-head">
+          <span class="scs-additional-services__group-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 20V4h16v16M2.5 20h19"></path>
+              <path d="M8 20v-5a4 4 0 0 1 8 0v5"></path>
+              <path d="M12 17.5c-1.5-.8-1.8-2.2-.8-3.5.7-.8 1-1.7.8-3 1.8 1.6 3 3.1 2.3 4.8-.4 1.1-1.2 1.7-2.3 1.7Z"></path>
+            </svg>
+          </span>
+
+          <div>
+            <small>Indoor Hearth Systems</small>
+
+            <h3 id="scs-featured-hearth-services-title">
+              Fireplace &amp; Wood Stove Services
+            </h3>
+
+            <p>
+              Review repair, cleaning, installation, and supported service
+              options for fireplaces and connected wood stove systems.
+            </p>
+          </div>
+        </header>
+
+        <div class="scs-additional-services__fireplace-grid">
+
+          <!-- Fireplace Repair -->
+
+          <a class="scs-additional-services__card scs-additional-services__card--repair" href="https://www.santachimneys.com/services/fireplace-repair/" aria-label="View fireplace repair services" data-scs-event="service_link_click" data-scs-location="services_hub_additional_services" data-scs-service="fireplace_repair">
+            <div class="scs-additional-services__media">
+              <img src="https://www.santachimneys.com/wp-content/uploads/2026/08/unnamed-5-scaled.webp" alt="Residential fireplace documented for fireplace repair" loading="lazy" decoding="async">
+
+              <span class="scs-additional-services__card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 20V4h16v16M2.5 20h19"></path>
+                  <path d="M8 20v-5a4 4 0 0 1 8 0v5"></path>
+                  <path d="m15.5 7.5 2-2 1 1-2 2M14 9l2 2"></path>
+                </svg>
+              </span>
+            </div>
+
+            <div class="scs-additional-services__card-body">
+              <h4>Fireplace Repair</h4>
+
+              <p>
+                Start here for damaged materials, cracks, broken panels,
+                smoke problems, or changes in fireplace performance.
+              </p>
+
+              <span class="scs-additional-services__learn">
+                View Fireplace Repair
+
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M14 7l5 5-5 5"></path>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Fireplace Cleaning -->
+
+          <a class="scs-additional-services__card scs-additional-services__card--cleaning" href="https://www.santachimneys.com/services/fireplace-cleaning/" aria-label="View fireplace cleaning services" data-scs-event="service_link_click" data-scs-location="services_hub_additional_services" data-scs-service="fireplace_cleaning">
+            <div class="scs-additional-services__media">
+              <img src="https://www.santachimneys.com/wp-content/uploads/2026/08/unnamed-2.webp" alt="Fireplace interior prepared for professional cleaning" loading="lazy" decoding="async">
+
+              <span class="scs-additional-services__card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 4h10v7a5 5 0 0 1-10 0V4Z"></path>
+                  <path d="M5 20h14M9 16v4M15 16v4M5 4h14"></path>
+                </svg>
+              </span>
+            </div>
+
+            <div class="scs-additional-services__card-body">
+              <h4>Fireplace Cleaning</h4>
+
+              <p>
+                Addresses ash, soot, residue, and visible buildup in
+                serviceable fireplace areas.
+              </p>
+
+              <span class="scs-additional-services__learn">
+                View Fireplace Cleaning
+
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M14 7l5 5-5 5"></path>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Fireplace Installation -->
+
+          <a class="scs-additional-services__card scs-additional-services__card--installation" href="https://www.santachimneys.com/services/fireplace-installation/" aria-label="View fireplace installation services" data-scs-event="service_link_click" data-scs-location="services_hub_additional_services" data-scs-service="fireplace_installation">
+            <div class="scs-additional-services__media">
+              <img src="https://www.santachimneys.com/wp-content/uploads/2026/08/2025-11-24.jpg" alt="Residential fireplace installation project" loading="lazy" decoding="async">
+
+              <span class="scs-additional-services__card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 20V4h16v16M2.5 20h19"></path>
+                  <path d="M8 20v-5a4 4 0 0 1 8 0v5"></path>
+                  <path d="M12 6v5M9.5 8.5h5"></path>
+                </svg>
+              </span>
+            </div>
+
+            <div class="scs-additional-services__card-body">
+              <h4>Fireplace Installation</h4>
+
+              <p>
+                Explore supported fireplace installation, replacement,
+                insert, refacing, and upgrade services.
+              </p>
+
+              <span class="scs-additional-services__learn">
+                View Fireplace Installation
+
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M14 7l5 5-5 5"></path>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Wood Stove Services -->
+
+        <a class="scs-additional-services__stove" href="https://www.santachimneys.com/services/wood-stove-services/" aria-label="View wood stove services" data-scs-event="service_link_click" data-scs-location="services_hub_additional_services" data-scs-service="wood_stove_services">
+          <div class="scs-additional-services__stove-media">
+            <img src="https://www.santachimneys.com/wp-content/uploads/elementor/thumbs/IMG_8854-rrnh3so71sh6xv3slau3px6rce7k5cc0brrj99kpvc.jpg" alt="Residential wood stove and connected venting system" loading="lazy" decoding="async">
+          </div>
+
+          <div class="scs-additional-services__stove-content">
+            <small>Inspection, Cleaning, Repair or Installation</small>
+
+            <h4>Wood Stove Services</h4>
+
+            <p>
+              Wood stove services may include inspection, cleaning, repair,
+              installation, or work involving the connected venting system.
+            </p>
+
+            <span class="scs-additional-services__learn">
+              View Wood Stove Services
+
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M14 7l5 5-5 5"></path>
+              </svg>
+            </span>
+          </div>
+        </a>
+      </section>
+
+      <!-- =====================================================
+           DRYER VENT CLEANING
+           ===================================================== -->
+
+      <section class="scs-additional-services__group" id="scs-featured-dryer-vent-services" aria-labelledby="scs-featured-dryer-vent-services-title">
+        <header class="scs-additional-services__group-head">
+          <span class="scs-additional-services__group-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <rect x="4" y="3" width="16" height="18" rx="2"></rect>
+              <circle cx="12" cy="13" r="5"></circle>
+              <path d="M8 6h.01M11 6h5"></path>
+            </svg>
+          </span>
+
+          <div>
+            <small>Residential Exhaust Cleaning</small>
+
+            <h3 id="scs-featured-dryer-vent-services-title">
+              Dryer Vent Cleaning
+            </h3>
+
+            <p>
+              Review cleaning for lint and debris inside the serviceable
+              dryer exhaust path.
+            </p>
+          </div>
+        </header>
+
+        <a class="scs-additional-services__dryer" href="https://www.santachimneys.com/services/dryer-vent-cleaning/" aria-label="View dryer vent cleaning services" data-scs-event="service_link_click" data-scs-location="services_hub_additional_services" data-scs-service="dryer_vent_cleaning">
+          <div class="scs-additional-services__dryer-content">
+            <small>Residential Exhaust Service</small>
+
+            <h4>Dryer Vent Cleaning</h4>
+
+            <p>
+              Lint and debris can collect inside a dryer’s exhaust path.
+              Dryer vent cleaning addresses buildup inside accessible vent
+              and duct areas.
+            </p>
+
+            <span class="scs-additional-services__learn">
+              View Dryer Vent Cleaning
+
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M14 7l5 5-5 5"></path>
+              </svg>
+            </span>
+          </div>
+
+          <div class="scs-additional-services__dryer-media">
+            <img src="https://www.santachimneys.com/wp-content/uploads/2023/07/dryer-1536x1024.webp" alt="Residential dryer and dryer vent cleaning service" loading="lazy" decoding="async">
+          </div>
+        </a>
+      </section>
+
+    </div>
+
+    <!-- =====================================================
+         BOOKING CTA
+         ===================================================== -->
+
+    <div class="scs-additional-services__cta">
+      <div>
+        <strong>
+          Request Fireplace, Wood Stove or Dryer Vent Service
+        </strong>
+
+        <p>
+          Select the service closest to your concern and include the unit
+          type, warning signs, and property ZIP code in your booking request.
+        </p>
+      </div>
+
+      <a class="scs-additional-services__cta-button" href="https://online-booking.workiz.com/?ac=0245991a37759fe4fbdd2ca3a2aea52c72938a4e0fd630eba2b4b062a5e4f580" aria-label="Book fireplace, wood stove, or dryer vent service" data-scs-event="book_service_click" data-scs-location="services_hub_additional_services">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 3v3M17 3v3M4.5 9.5h15"></path>
+          <rect x="4.5" y="5" width="15" height="15" rx="2"></rect>
+          <path d="m9 14 2 2 4-4"></path>
+        </svg>
+
+        <span>Book Service</span>
+      </a>
+    </div>
+
+  </div>
+</section>

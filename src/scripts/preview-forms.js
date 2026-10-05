@@ -33,6 +33,7 @@
       localStorage.removeItem(key);
       localStorage.removeItem(key + "_claimed");
       sessionStorage.removeItem(key + "_popup_dismissed");
+      sessionStorage.removeItem(key + "_popup_seen");
     } catch (_) {}
     window.location.reload();
   });

@@ -1,0 +1,1098 @@
+<style id="scs-chimney-services-styles">
+  /* =========================================================
+     SANTA CHIMNEY SWEEP
+     SERVICES HUB — 10 MAIN SERVICE PAGES
+     ========================================================= */
+
+  #chimney-services {
+    --scs-cs-red: #c9202f;
+    --scs-cs-red-dark: #99131e;
+    --scs-cs-amber: #d89238;
+    --scs-cs-black: #101315;
+    --scs-cs-muted: #62696f;
+    --scs-cs-cream: #f7f3f0;
+    --scs-cs-border: #e1dbd5;
+    --scs-cs-container: 1180px;
+
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: clamp(72px, 8vw, 112px) 0;
+    overflow: hidden;
+    color: var(--scs-cs-black);
+    background: #ffffff;
+  }
+
+  #chimney-services,
+  #chimney-services *,
+  #chimney-services *::before,
+  #chimney-services *::after {
+    box-sizing: border-box;
+  }
+
+  #chimney-services::before {
+    position: absolute;
+    z-index: -1;
+    top: -220px;
+    left: -220px;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(201, 32, 47, 0.08),
+      transparent 70%
+    );
+    content: "";
+    pointer-events: none;
+  }
+
+  #chimney-services .scs-chimney-services__container {
+    width: min(calc(100% - 48px), var(--scs-cs-container));
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  /* =========================================================
+     MAIN HEADING
+     ========================================================= */
+
+  #chimney-services .scs-chimney-services__heading {
+    display: grid;
+    max-width: 850px;
+    margin: 0 auto clamp(42px, 6vw, 66px);
+    justify-items: center;
+    text-align: center;
+  }
+
+  #chimney-services .scs-chimney-services__eyebrow {
+    display: inline-flex;
+    margin: 0 0 13px;
+    align-items: center;
+    gap: 10px;
+    color: var(--scs-cs-red);
+    font-size: 12px;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  #chimney-services .scs-chimney-services__eyebrow::before,
+  #chimney-services .scs-chimney-services__eyebrow::after {
+    width: 24px;
+    height: 2px;
+    flex: 0 0 auto;
+    background: currentColor;
+    content: "";
+  }
+
+  #chimney-services .scs-chimney-services__heading h2 {
+    margin: 0;
+    color: var(--scs-cs-black);
+    font-family: var(--scs-font-heading, "Roboto Slab", Georgia, serif);
+    font-size: clamp(36px, 4.8vw, 56px);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  #chimney-services .scs-chimney-services__heading p {
+    max-width: 780px;
+    margin: 18px 0 0;
+    color: var(--scs-cs-muted);
+    font-size: clamp(16px, 1.8vw, 18px);
+    line-height: 1.7;
+  }
+
+  /* =========================================================
+     SERVICE GROUPS
+     ========================================================= */
+
+  #chimney-services .scs-chimney-services__groups {
+    display: grid;
+    gap: clamp(26px, 4vw, 42px);
+  }
+
+  #chimney-services .scs-chimney-services__group {
+    position: relative;
+    min-width: 0;
+    padding: clamp(24px, 4vw, 38px);
+    overflow: hidden;
+    background: var(--scs-cs-cream);
+    border: 1px solid var(--scs-cs-border);
+    border-radius: 24px;
+    scroll-margin-top: 110px;
+  }
+
+  #chimney-services .scs-chimney-services__group:nth-child(even) {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(247, 243, 240, 0.98)
+    );
+  }
+
+  #chimney-services .scs-chimney-services__group::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110px;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      var(--scs-cs-red),
+      var(--scs-cs-amber)
+    );
+    content: "";
+  }
+
+  #chimney-services .scs-chimney-services__group-head {
+    display: grid;
+    min-width: 0;
+    margin-bottom: 25px;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 16px;
+  }
+
+  #chimney-services .scs-chimney-services__group-icon {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    color: #ffffff;
+    background: linear-gradient(
+      135deg,
+      #dc3542,
+      var(--scs-cs-red-dark)
+    );
+    border-radius: 15px;
+    box-shadow: 0 10px 22px rgba(201, 32, 47, 0.22);
+    place-items: center;
+  }
+
+  #chimney-services .scs-chimney-services__group-icon svg {
+    display: block;
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  #chimney-services .scs-chimney-services__group-head small {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--scs-cs-red);
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  #chimney-services .scs-chimney-services__group-head h3 {
+    margin: 0;
+    color: var(--scs-cs-black);
+    font-family: var(--scs-font-heading, "Roboto Slab", Georgia, serif);
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+  }
+
+  /* =========================================================
+     SERVICE GRID
+     ========================================================= */
+
+  #chimney-services .scs-chimney-services__grid {
+    display: grid;
+    min-width: 0;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  #chimney-services .scs-chimney-services__grid--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* =========================================================
+     SERVICE CARDS
+     ========================================================= */
+
+  #chimney-services .scs-chimney-services__card {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    color: var(--scs-cs-black);
+    background: #ffffff;
+    border: 1px solid var(--scs-cs-border);
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(16, 19, 21, 0.06);
+    text-decoration: none;
+    transition:
+      border-color 220ms ease,
+      box-shadow 260ms ease,
+      transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  #chimney-services .scs-chimney-services__card:visited {
+    color: var(--scs-cs-black);
+  }
+
+  #chimney-services .scs-chimney-services__media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    flex: 0 0 auto;
+    overflow: hidden;
+    background: #1a1e20;
+  }
+
+  #chimney-services .scs-chimney-services__media img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: 100% !important;
+    margin: 0;
+    object-fit: cover;
+    object-position: center;
+    transition:
+      filter 280ms ease,
+      transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  #chimney-services
+    .scs-chimney-services__card--inspection
+    .scs-chimney-services__media img {
+    object-position: center 47%;
+  }
+
+  #chimney-services
+    .scs-chimney-services__card--repair
+    .scs-chimney-services__media img {
+    object-position: center 45%;
+  }
+
+  #chimney-services
+    .scs-chimney-services__card--construction
+    .scs-chimney-services__media img {
+    object-position: center 42%;
+  }
+
+  #chimney-services
+    .scs-chimney-services__card--fireplace-repair
+    .scs-chimney-services__media img {
+    object-position: center 44%;
+  }
+
+  #chimney-services
+    .scs-chimney-services__card--fireplace-cleaning
+    .scs-chimney-services__media img {
+    object-position: center;
+  }
+
+  #chimney-services
+    .scs-chimney-services__card--fireplace-installation
+    .scs-chimney-services__media img {
+    object-position: center 35%;
+  }
+
+  #chimney-services
+    .scs-chimney-services__card--wood-stove
+    .scs-chimney-services__media img {
+    object-position: center 45%;
+  }
+
+  #chimney-services
+    .scs-chimney-services__card--dryer-vent
+    .scs-chimney-services__media img {
+    object-position: center 44%;
+  }
+
+  #chimney-services
+    .scs-chimney-services__card--air-duct
+    .scs-chimney-services__media img {
+    object-position: center 46%;
+  }
+
+  #chimney-services .scs-chimney-services__media::after {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(7, 9, 10, 0.01),
+      rgba(7, 9, 10, 0.43)
+    );
+    content: "";
+    pointer-events: none;
+  }
+
+  #chimney-services .scs-chimney-services__card-body {
+    display: flex;
+    min-width: 0;
+    flex: 1;
+    padding: 22px;
+    flex-direction: column;
+  }
+
+  #chimney-services .scs-chimney-services__card h4 {
+    margin: 0;
+    color: var(--scs-cs-black);
+    font-family: var(--scs-font-heading, "Roboto Slab", Georgia, serif);
+    font-size: clamp(20px, 2vw, 24px);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  #chimney-services .scs-chimney-services__card p {
+    margin: 11px 0 0;
+    color: var(--scs-cs-muted);
+    font-size: 14px;
+    line-height: 1.68;
+  }
+
+  #chimney-services .scs-chimney-services__learn {
+    display: flex;
+    margin-top: auto;
+    padding-top: 18px;
+    align-items: center;
+    gap: 8px;
+    color: var(--scs-cs-red);
+    font-size: 13px;
+    font-weight: 850;
+    line-height: 1.35;
+  }
+
+  #chimney-services .scs-chimney-services__learn svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 200ms ease;
+  }
+
+  /* =========================================================
+     FINAL CTA
+     ========================================================= */
+
+  #chimney-services .scs-chimney-services__cta {
+    position: relative;
+    display: grid;
+    min-width: 0;
+    margin-top: clamp(32px, 5vw, 50px);
+    padding: clamp(25px, 4vw, 38px);
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 24px;
+    overflow: hidden;
+    color: #ffffff;
+    background:
+      radial-gradient(
+        circle at 90% 130%,
+        rgba(201, 32, 47, 0.5),
+        transparent 35%
+      ),
+      linear-gradient(120deg, #0a0d0f, #181b1e 62%, #251113);
+    border-radius: 22px;
+    box-shadow: 0 20px 50px rgba(16, 19, 21, 0.16);
+  }
+
+  #chimney-services .scs-chimney-services__cta::before {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 4px;
+    background: linear-gradient(
+      180deg,
+      var(--scs-cs-amber),
+      var(--scs-cs-red)
+    );
+    content: "";
+  }
+
+  #chimney-services .scs-chimney-services__cta-media {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(46%, 520px);
+    overflow: hidden;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  #chimney-services .scs-chimney-services__cta-media::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      #111416 0%,
+      rgba(17, 20, 22, 0.28) 55%,
+      rgba(17, 20, 22, 0.08) 100%
+    );
+    content: "";
+  }
+
+  #chimney-services .scs-chimney-services__cta-media img {
+    display: block;
+    width: 100%;
+    height: 100% !important;
+    margin: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  #chimney-services .scs-chimney-services__cta-copy,
+  #chimney-services .scs-chimney-services__cta-button {
+    position: relative;
+    z-index: 2;
+  }
+
+  #chimney-services .scs-chimney-services__cta small {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--scs-cs-amber);
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 0.11em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  #chimney-services .scs-chimney-services__cta strong {
+    display: block;
+    color: #ffffff;
+    font-family: var(--scs-font-heading, "Roboto Slab", Georgia, serif);
+    font-size: clamp(23px, 3vw, 34px);
+    line-height: 1.16;
+    overflow-wrap: anywhere;
+  }
+
+  #chimney-services .scs-chimney-services__cta p {
+    max-width: 660px;
+    margin: 7px 0 0;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  #chimney-services .scs-chimney-services__cta-button {
+    display: inline-flex;
+    min-height: 52px;
+    padding: 13px 19px;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    color: #ffffff;
+    background: linear-gradient(
+      135deg,
+      #df3542,
+      var(--scs-cs-red) 55%,
+      var(--scs-cs-red-dark)
+    );
+    border: 1px solid #e33b48;
+    border-radius: 11px;
+    box-shadow:
+      0 13px 28px rgba(201, 32, 47, 0.32),
+      inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    font-size: 14px;
+    font-weight: 850;
+    line-height: 1.2;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+      box-shadow 180ms ease,
+      transform 180ms ease;
+  }
+
+  #chimney-services .scs-chimney-services__cta-button:visited {
+    color: #ffffff;
+  }
+
+  #chimney-services .scs-chimney-services__cta-button svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* =========================================================
+     HOVER AND FOCUS
+     ========================================================= */
+
+  @media (hover: hover) and (pointer: fine) {
+    #chimney-services .scs-chimney-services__card:hover {
+      color: var(--scs-cs-black);
+      border-color: rgba(201, 32, 47, 0.34);
+      box-shadow: 0 20px 46px rgba(16, 19, 21, 0.12);
+      transform: translateY(-5px);
+    }
+
+    #chimney-services
+      .scs-chimney-services__card:hover
+      .scs-chimney-services__media img {
+      filter: saturate(1.07) contrast(1.02);
+      transform: scale(1.05);
+    }
+
+    #chimney-services
+      .scs-chimney-services__card:hover
+      .scs-chimney-services__learn svg {
+      transform: translateX(4px);
+    }
+
+    #chimney-services
+      .scs-chimney-services__cta-button:hover {
+      color: #ffffff;
+      box-shadow:
+        0 18px 36px rgba(201, 32, 47, 0.42),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+    }
+  }
+
+  #chimney-services .scs-chimney-services__card:focus-visible,
+  #chimney-services
+    .scs-chimney-services__cta-button:focus-visible {
+    outline: 3px solid var(--scs-cs-red);
+    outline-offset: 4px;
+  }
+
+  /* =========================================================
+     TABLET
+     ========================================================= */
+
+  @media (max-width: 900px) {
+    #chimney-services .scs-chimney-services__heading h2 {
+      font-size: clamp(36px, 6.5vw, 50px);
+    }
+  }
+
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+
+  @media (max-width: 700px) {
+    #chimney-services {
+      padding: 64px 0;
+    }
+
+    #chimney-services .scs-chimney-services__container {
+      width: min(calc(100% - 28px), var(--scs-cs-container));
+    }
+
+    #chimney-services .scs-chimney-services__heading {
+      margin-bottom: 36px;
+      justify-items: start;
+      text-align: left;
+    }
+
+    #chimney-services .scs-chimney-services__eyebrow::after {
+      display: none;
+    }
+
+    #chimney-services .scs-chimney-services__heading h2 {
+      font-size: clamp(34px, 10vw, 44px);
+    }
+
+    #chimney-services .scs-chimney-services__group {
+      padding: 21px;
+      border-radius: 19px;
+      scroll-margin-top: 90px;
+    }
+
+    #chimney-services .scs-chimney-services__group-head {
+      margin-bottom: 20px;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 12px;
+    }
+
+    #chimney-services .scs-chimney-services__group-icon {
+      width: 48px;
+      height: 48px;
+    }
+
+    #chimney-services .scs-chimney-services__group-head h3 {
+      font-size: 25px;
+    }
+
+    #chimney-services .scs-chimney-services__grid--2 {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    #chimney-services .scs-chimney-services__card {
+      border-radius: 16px;
+    }
+
+    #chimney-services .scs-chimney-services__card-body {
+      padding: 20px;
+    }
+
+    #chimney-services .scs-chimney-services__cta {
+      padding: 25px 21px;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
+      border-radius: 18px;
+    }
+
+    #chimney-services .scs-chimney-services__cta-media {
+      width: 100%;
+      opacity: 0.12;
+    }
+
+    #chimney-services .scs-chimney-services__cta-media::after {
+      background: rgba(10, 13, 15, 0.58);
+    }
+
+    #chimney-services .scs-chimney-services__cta-button {
+      width: 100%;
+      white-space: normal;
+    }
+  }
+
+  @media (max-width: 420px) {
+    #chimney-services .scs-chimney-services__container {
+      width: min(calc(100% - 22px), var(--scs-cs-container));
+    }
+
+    #chimney-services .scs-chimney-services__group {
+      padding: 18px;
+    }
+
+    #chimney-services .scs-chimney-services__card-body {
+      padding: 18px;
+    }
+  }
+
+  /* =========================================================
+     REDUCED MOTION
+     ========================================================= */
+
+  @media (prefers-reduced-motion: reduce) {
+    #chimney-services .scs-chimney-services__card,
+    #chimney-services .scs-chimney-services__media img,
+    #chimney-services .scs-chimney-services__learn svg,
+    #chimney-services .scs-chimney-services__cta-button {
+      transition: none !important;
+      transform: none !important;
+    }
+  }
+</style>
+
+<!--
+  Santa Chimney Sweep
+  Services Hub — Main Service Pages
+-->
+
+<section class="scs-lp scs-chimney-services" id="chimney-services" aria-labelledby="scs-chimney-services-title">
+  <div class="scs-chimney-services__container">
+
+    <header class="scs-chimney-services__heading">
+      <span class="scs-chimney-services__eyebrow">
+        Main Residential Services
+      </span>
+
+      <h2 id="scs-chimney-services-title">
+        Chimney, Fireplace &amp; Vent Services for Austin Homes
+      </h2>
+
+      <p>
+        Choose the main service that best matches your chimney, fireplace,
+        wood stove, dryer vent, or air-duct concern. If you are not sure
+        where to begin, start with the closest service and describe what
+        you are noticing.
+      </p>
+    </header>
+
+    <div class="scs-chimney-services__groups">
+
+      <!-- =====================================================
+           GROUP 01: CHIMNEY SERVICES
+           ===================================================== -->
+
+      <section class="scs-chimney-services__group" id="scs-main-chimney-services" aria-labelledby="scs-main-chimney-services-title">
+        <header class="scs-chimney-services__group-head">
+          <span class="scs-chimney-services__group-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M7 3h10v18H7Z"></path>
+              <path d="M5 21h14M9 3V1M15 3V1"></path>
+              <path d="M10 8h4M10 12h4M10 16h4"></path>
+            </svg>
+          </span>
+
+          <div>
+            <small>Cleaning, Evaluation and Structural Work</small>
+
+            <h3 id="scs-main-chimney-services-title">
+              Main Chimney Services
+            </h3>
+          </div>
+        </header>
+
+        <div class="scs-chimney-services__grid scs-chimney-services__grid--2">
+
+          <!-- Chimney Sweeping -->
+
+          <a class="scs-chimney-services__card" href="https://www.santachimneys.com/services/chimney-sweeping/" aria-label="View chimney sweeping and cleaning services" data-scs-event="service_link_click" data-scs-location="services_hub_main_services" data-scs-service="chimney_sweeping">
+            <div class="scs-chimney-services__media">
+              <img src="https://www.santachimneys.com/wp-content/uploads/2026/08/unnamed-9-scaled.webp" alt="Chimney brush removing buildup from a residential chimney flue" loading="lazy" decoding="async">
+            </div>
+
+            <div class="scs-chimney-services__card-body">
+              <h4>Chimney Sweeping &amp; Cleaning</h4>
+
+              <p>
+                Removes soot, creosote, and debris from serviceable chimney
+                areas as part of routine chimney care.
+              </p>
+
+              <span class="scs-chimney-services__learn">
+                View Chimney Sweeping
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M14 7l5 5-5 5"></path>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Chimney Inspections -->
+
+          <a class="scs-chimney-services__card scs-chimney-services__card--inspection" href="https://www.santachimneys.com/services/chimney-inspections/" aria-label="View chimney inspection services" data-scs-event="service_link_click" data-scs-location="services_hub_main_services" data-scs-service="chimney_inspections">
+            <div class="scs-chimney-services__media">
+              <img src="https://www.santachimneys.com/wp-content/uploads/2022/12/raze-solar-G8tyblQ4p04-unsplash.jpg" alt="Technician inspecting a residential chimney and roof area" loading="lazy" decoding="async">
+            </div>
+
+            <div class="scs-chimney-services__card-body">
+              <h4>Chimney Inspections</h4>
+
+              <p>
+                Reviews accessible chimney and fireplace areas for buildup,
+                visible damage, moisture, and possible venting concerns.
+              </p>
+
+              <span class="scs-chimney-services__learn">
+                View Chimney Inspections
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M14 7l5 5-5 5"></path>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Chimney Repair -->
+
+          <a class="scs-chimney-services__card scs-chimney-services__card--repair" href="https://www.santachimneys.com/services/chimney-repair/" aria-label="View chimney repair services" data-scs-event="service_link_click" data-scs-location="services_hub_main_services" data-scs-service="chimney_repair">
+            <div class="scs-chimney-services__media">
+              <img src="https://www.santachimneys.com/wp-content/uploads/2026/08/2025-11-18-1.jpg" alt="Santa Chimney Sweep technician working on a residential chimney" loading="lazy" decoding="async">
+            </div>
+
+            <div class="scs-chimney-services__card-body">
+              <h4>Chimney Repair</h4>
+
+              <p>
+                Start here for chimney leaks, damaged masonry, flue or liner
+                problems, cracked components, and other repair concerns.
+              </p>
+
+              <span class="scs-chimney-services__learn">
+                View Chimney Repair
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M14 7l5 5-5 5"></path>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Chimney Construction -->
+
+          <a class="scs-chimney-services__card scs-chimney-services__card--construction" href="https://www.santachimneys.com/services/chimney-construction/" aria-label="View chimney construction services" data-scs-event="service_link_click" data-scs-location="services_hub_main_services" data-scs-service="chimney_construction">
+            <div class="scs-chimney-services__media">
+              <img src="https://www.santachimneys.com/wp-content/uploads/2024/11/8153e29c-417f-4814-8d7e-e9a9ea24f245.jpeg" alt="Residential chimney construction project" loading="lazy" decoding="async">
+            </div>
+
+            <div class="scs-chimney-services__card-body">
+              <h4>Chimney Construction</h4>
+
+              <p>
+                Covers supported new residential chimney projects and is
+                separate from repairing or restoring an existing chimney.
+              </p>
+
+              <span class="scs-chimney-services__learn">
+                View Chimney Construction
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M14 7l5 5-5 5"></path>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- =====================================================
+           GROUP 02: FIREPLACE AND WOOD-STOVE SERVICES
+           ===================================================== -->
+
+      <section class="scs-chimney-services__group" id="scs-main-hearth-services" aria-labelledby="scs-main-hearth-services-title">
+        <header class="scs-chimney-services__group-head">
+          <span class="scs-chimney-services__group-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M5 21V10h14v11"></path>
+              <path d="M3 21h18M8 10V6h8v4"></path>
+              <path d="M12 13c2 2 2.7 3.5 2.1 5a2.3 2.3 0 0 1-4.2 0c-.6-1.5.1-3 2.1-5Z"></path>
+            </svg>
+          </span>
+
+          <div>
+            <small>Indoor Hearth Systems</small>
+
+            <h3 id="scs-main-hearth-services-title">
+              Fireplace &amp; Wood-Stove Services
+            </h3>
+          </div>
+        </header>
+
+        <div class="scs-chimney-services__grid scs-chimney-services__grid--2">
+
+          <!-- Fireplace Repair -->
+
+          <a class="scs-chimney-services__card scs-chimney-services__card--fireplace-repair" href="https://www.santachimneys.com/services/fireplace-repair/" aria-label="View fireplace repair services" data-scs-event="service_link_click" data-scs-location="services_hub_main_services" data-scs-service="fireplace_repair">
+            <div class="scs-chimney-services__media">
+              <img src="https://www.santachimneys.com/wp-content/uploads/2026/08/2025-11-19.jpg" alt="Residential chimney exterior documented during a service evaluation" loading="lazy" decoding="async">
+            </div>
+
+            <div class="scs-chimney-services__card-body">
+              <h4>Fireplace Repair</h4>
+
+              <p>
+                Start here for cracks, damaged materials, broken panels,
+                smoke problems, or changes in fireplace performance.
+              </p>
+
+              <span class="scs-chimney-services__learn">
+                View Fireplace Repair
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M14 7l5 5-5 5"></path>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Fireplace Cleaning -->
+
+          <a class="scs-chimney-services__card scs-chimney-services__card--fireplace-cleaning" href="https://www.santachimneys.com/services/fireplace-cleaning/" aria-label="View fireplace cleaning services" data-scs-event="service_link_click" data-scs-location="services_hub_main_services" data-scs-service="fireplace_cleaning">
+            <div class="scs-chimney-services__media">
+              <img src="https://www.santachimneys.com/wp-content/uploads/2023/07/IMG_6998.jpeg" alt="Interior chimney and fireplace venting area documented during service" loading="lazy" decoding="async">
+            </div>
+
+            <div class="scs-chimney-services__card-body">
+              <h4>Fireplace Cleaning</h4>
+
+              <p>
+                Addresses ash, soot, residue, and visible buildup in
+                serviceable fireplace areas.
+              </p>
+
+              <span class="scs-chimney-services__learn">
+                View Fireplace Cleaning
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M14 7l5 5-5 5"></path>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Fireplace Installation -->
+
+          <a class="scs-chimney-services__card scs-chimney-services__card--fireplace-installation" href="https://www.santachimneys.com/services/fireplace-installation/" aria-label="View fireplace installation services" data-scs-event="service_link_click" data-scs-location="services_hub_main_services" data-scs-service="fireplace_installation">
+            <div class="scs-chimney-services__media">
+              <img src="https://www.santachimneys.com/wp-content/uploads/2023/01/Chimneys_-2-min-scaled.jpg" alt="Top of a residential masonry chimney and connected venting structure" loading="lazy" decoding="async">
+            </div>
+
+            <div class="scs-chimney-services__card-body">
+              <h4>Fireplace Installation</h4>
+
+              <p>
+                Explore supported fireplace installation, replacement,
+                insert, refacing, and upgrade services.
+              </p>
+
+              <span class="scs-chimney-services__learn">
+                View Fireplace Installation
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M14 7l5 5-5 5"></path>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Wood Stove Services -->
+
+          <a class="scs-chimney-services__card scs-chimney-services__card--wood-stove" href="https://www.santachimneys.com/services/wood-stove-services/" aria-label="View wood stove services" data-scs-event="service_link_click" data-scs-location="services_hub_main_services" data-scs-service="wood_stove_services">
+            <div class="scs-chimney-services__media">
+              <img src="https://www.santachimneys.com/wp-content/uploads/2023/03/linerUp06012012B.jpg" alt="Metal chimney liner being installed in a residential venting system" loading="lazy" decoding="async">
+            </div>
+
+            <div class="scs-chimney-services__card-body">
+              <h4>Wood Stove Services</h4>
+
+              <p>
+                Review supported cleaning, inspection, repair, installation,
+                and connected venting services for wood-stove systems.
+              </p>
+
+              <span class="scs-chimney-services__learn">
+                View Wood Stove Services
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M14 7l5 5-5 5"></path>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- =====================================================
+           GROUP 03: HOME VENT CLEANING
+           ===================================================== -->
+
+      <section class="scs-chimney-services__group" id="scs-main-vent-services" aria-labelledby="scs-main-vent-services-title">
+        <header class="scs-chimney-services__group-head">
+          <span class="scs-chimney-services__group-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 7h10a3 3 0 1 0-3-3"></path>
+              <path d="M4 12h14a3 3 0 1 1-3 3"></path>
+              <path d="M4 17h6"></path>
+            </svg>
+          </span>
+
+          <div>
+            <small>Residential Exhaust and Duct Systems</small>
+
+            <h3 id="scs-main-vent-services-title">
+              Home Vent Cleaning
+            </h3>
+          </div>
+        </header>
+
+        <div class="scs-chimney-services__grid scs-chimney-services__grid--2">
+
+          <!-- Dryer Vent Cleaning -->
+
+          <a class="scs-chimney-services__card scs-chimney-services__card--dryer-vent" href="https://www.santachimneys.com/services/dryer-vent-cleaning/" aria-label="View dryer vent cleaning services" data-scs-event="service_link_click" data-scs-location="services_hub_main_services" data-scs-service="dryer_vent_cleaning">
+            <div class="scs-chimney-services__media">
+              <img src="https://www.santachimneys.com/wp-content/uploads/2024/11/4a921774-2ed8-4efe-a8bc-ceb36c907fbb.jpg" alt="Residential roof and exterior venting area documented during service" loading="lazy" decoding="async">
+            </div>
+
+            <div class="scs-chimney-services__card-body">
+              <h4>Dryer Vent Cleaning</h4>
+
+              <p>
+                Removes lint and debris from serviceable dryer exhaust areas
+                when buildup or reduced airflow needs attention.
+              </p>
+
+              <span class="scs-chimney-services__learn">
+                View Dryer Vent Cleaning
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M14 7l5 5-5 5"></path>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Air Duct Cleaning -->
+
+          <a class="scs-chimney-services__card scs-chimney-services__card--air-duct" href="https://www.santachimneys.com/services/air-duct-cleaning/" aria-label="View air duct cleaning services" data-scs-event="service_link_click" data-scs-location="services_hub_main_services" data-scs-service="air_duct_cleaning">
+            <div class="scs-chimney-services__media">
+              <img src="https://www.santachimneys.com/wp-content/uploads/2023/07/IMG-7001.jpg" alt="Residential property exterior documented during service" loading="lazy" decoding="async">
+            </div>
+
+            <div class="scs-chimney-services__card-body">
+              <h4>Air Duct Cleaning</h4>
+
+              <p>
+                Residential air-duct cleaning for supported homes and duct
+                systems when dust or debris needs attention.
+              </p>
+
+              <span class="scs-chimney-services__learn">
+                View Air Duct Cleaning
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M14 7l5 5-5 5"></path>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- =====================================================
+         FINAL CTA
+         ===================================================== -->
+
+    <div class="scs-chimney-services__cta">
+      <div class="scs-chimney-services__cta-media" aria-hidden="true">
+        <img src="https://www.santachimneys.com/wp-content/uploads/2026/08/2025-11-27-1.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+
+      <div class="scs-chimney-services__cta-copy">
+        <small>Need Help Choosing?</small>
+
+        <strong>Not Sure Which Service Fits?</strong>
+
+        <p>
+          Tell us what changed, what you can see, or what another technician
+          found. You do not need to diagnose the problem before booking.
+        </p>
+      </div>
+
+      <a class="scs-chimney-services__cta-button" href="https://online-booking.workiz.com/?ac=0245991a37759fe4fbdd2ca3a2aea52c72938a4e0fd630eba2b4b062a5e4f580" aria-label="Book chimney, fireplace, or vent service online" data-scs-event="book_service_click" data-scs-location="services_hub_main_services">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 3v3M17 3v3M4.5 9.5h15"></path>
+          <rect x="4.5" y="5" width="15" height="15" rx="2"></rect>
+          <path d="m9 14 2 2 4-4"></path>
+        </svg>
+
+        <span>Book a Service</span>
+      </a>
+    </div>
+
+  </div>
+</section>

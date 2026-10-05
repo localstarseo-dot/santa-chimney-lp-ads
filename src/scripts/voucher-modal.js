@@ -22,7 +22,6 @@
     const config = configNode.dataset;
     const expiryKey = config.expiryKey;
     const claimKey = expiryKey + "_claimed";
-    const dismissKey = expiryKey + "_popup_dismissed";
 
     const sourceTimer = header.querySelector(
       "[data-sc-timer]"
@@ -52,6 +51,9 @@
     let submitButton = null;
     let previousFocus = null;
     let opened = false;
+    let automaticInvitationUsed = false;
+    let invitationEngaged = false;
+    let invitationTimer = 0;
 
     modal.setAttribute("role", "dialog");
     modal.setAttribute("aria-modal", "true");
@@ -160,6 +162,7 @@
         return;
       }
 
+      stopAutomaticInvitation();
       opened = true;
       previousFocus = document.activeElement;
 
@@ -185,7 +188,7 @@
       });
     }
 
-    function closeModal(recordDismissal) {
+    function closeModal() {
       if (!opened) {
         return;
       }
@@ -202,17 +205,6 @@
       document.body.classList.remove(
         "sc-voucher-modal-open"
       );
-
-      if (recordDismissal) {
-        try {
-          sessionStorage.setItem(
-            dismissKey,
-            "true"
-          );
-        } catch (error) {
-          /* Session storage is optional. */
-        }
-      }
 
       if (previousFocus) {
         if (
@@ -339,7 +331,7 @@
       closeButton.addEventListener(
         "click",
         function () {
-          closeModal(true);
+          closeModal();
         }
       );
     }
@@ -348,7 +340,7 @@
       "click",
       function (event) {
         if (event.target === modal) {
-          closeModal(true);
+          closeModal();
         }
       }
     );
@@ -358,7 +350,7 @@
       function (event) {
         if (event.key === "Escape") {
           event.preventDefault();
-          closeModal(true);
+          closeModal();
           return;
         }
 
@@ -416,7 +408,7 @@
         return;
       }
 
-      closeModal(false);
+      closeModal();
     }).observe(header, {
       attributes: true,
       attributeFilter: ["class"]
@@ -438,23 +430,62 @@
 
     modal.addEventListener("sc:preview-open", openModal);
 
-    function schedulePopup() {
-      window.setTimeout(openModal, 5000);
+    /* One invitation per page load. Closing it never reopens it on the same
+     * page, but an old tab-session dismissal must not suppress future loads.
+     */
+    function stopAutomaticInvitation() {
+      automaticInvitationUsed = true;
+      window.clearTimeout(invitationTimer);
+      invitationTimer = 0;
+      window.removeEventListener("scroll", inviteAfterEngagement);
+      document.removeEventListener("click", inviteAfterEngagement);
+      document.removeEventListener("visibilitychange", queueAutomaticInvitation);
+      document.removeEventListener("focusout", queueAutomaticInvitation);
     }
 
-    if (document.readyState === "complete") {
-      schedulePopup();
-    } else {
-      window.addEventListener(
-        "load",
-        schedulePopup,
-        { once: true }
+    function visitorIsEnteringDetails() {
+      return document.activeElement && document.activeElement.matches(
+        "input, select, textarea, [contenteditable]:not([contenteditable='false'])"
       );
+    }
+
+    function queueAutomaticInvitation() {
+      if (!invitationEngaged || automaticInvitationUsed || invitationTimer ||
+          opened || isClaimed() || document.hidden || visitorIsEnteringDetails()) return;
+
+      invitationTimer = window.setTimeout(function () {
+        invitationTimer = 0;
+        /* A blocked attempt can retry after focus leaves a field or the tab
+         * becomes visible. Never lose the invitation or interrupt typing.
+         */
+        if (automaticInvitationUsed || opened || isClaimed() ||
+            document.hidden || visitorIsEnteringDetails()) return;
+        openModal();
+      }, 5000);
+    }
+
+    function inviteAfterEngagement(event) {
+      if (automaticInvitationUsed || isClaimed()) return;
+      if (event.type === "scroll" && window.scrollY < 80) return;
+      if (event.type === "click" && !event.target.closest("#main-content a[href^='#']")) return;
+      invitationEngaged = true;
+      queueAutomaticInvitation();
+    }
+
+    window.addEventListener("scroll", inviteAfterEngagement, { passive: true });
+    document.addEventListener("click", inviteAfterEngagement);
+    document.addEventListener("visibilitychange", queueAutomaticInvitation);
+    document.addEventListener("focusout", queueAutomaticInvitation);
+    if (window.scrollY >= 80) {
+      invitationEngaged = true;
+      queueAutomaticInvitation();
     }
 
     window.addEventListener(
       "pagehide",
       function () {
+        window.clearTimeout(invitationTimer);
+        invitationTimer = 0;
         document.documentElement.classList.remove(
           "sc-voucher-modal-open"
         );

@@ -1,0 +1,115 @@
+{
+  "source": "JC-supplied WordPress Media Library URLs, October 6 2026",
+  "icons": [
+    {
+      "category": "repair",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/chimney_leak_repair_icon.png",
+      "usedOnLp1": true
+    },
+    {
+      "category": "repair",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/chimney_crown_repair_icon.png",
+      "usedOnLp1": true
+    },
+    {
+      "category": "repair",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/chimney_flashing_repair_icon.png",
+      "usedOnLp1": true
+    },
+    {
+      "category": "repair",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/chimney_masonry_repair_icon.png",
+      "usedOnLp1": true
+    },
+    {
+      "category": "repair",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/chimney_liner_installation_icon.png",
+      "usedOnLp1": true
+    },
+    {
+      "category": "repair",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/chimney_cap_repair_icon.png",
+      "usedOnLp1": true
+    },
+    {
+      "category": "repair",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/fireplace_repair_icon_with_flame_and_trowel.png",
+      "usedOnLp1": false
+    },
+    {
+      "category": "repair",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/chimney_restoration_icon.png",
+      "usedOnLp1": false
+    },
+    {
+      "category": "inspection",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/chimney_inspection_magnifier_icon.png",
+      "usedOnLp1": false
+    },
+    {
+      "category": "inspection",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/video_chimney_inspection_icon.png",
+      "usedOnLp1": false
+    },
+    {
+      "category": "inspection",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/chimney_inspection_camera_icon.png",
+      "usedOnLp1": false
+    },
+    {
+      "category": "inspection",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/roof_chimney_inspection_icon.png",
+      "usedOnLp1": false
+    },
+    {
+      "category": "inspection",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/chimney_flue_inspection_icon.png",
+      "usedOnLp1": false
+    },
+    {
+      "category": "inspection",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/fireplace_inspection_magnifier_icon.png",
+      "usedOnLp1": false
+    },
+    {
+      "category": "inspection",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/chimney_inspection_report_icon.png",
+      "usedOnLp1": false
+    },
+    {
+      "category": "cleaning",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/chimney_sweeping_icon.png",
+      "usedOnLp1": false
+    },
+    {
+      "category": "cleaning",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/chimney_creosote_cleaning_icon.png",
+      "usedOnLp1": false
+    },
+    {
+      "category": "cleaning",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/chimney_soot_cleaning_icon.png",
+      "usedOnLp1": false
+    },
+    {
+      "category": "cleaning",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/fireplace_cleaning_icon.png",
+      "usedOnLp1": false
+    },
+    {
+      "category": "cleaning",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/chimney_flue_cleaning_icon.png",
+      "usedOnLp1": false
+    },
+    {
+      "category": "cleaning",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/chimney_blockage_removal_icon.png",
+      "usedOnLp1": false
+    },
+    {
+      "category": "cleaning",
+      "url": "https://www.santachimneys.com/wp-content/uploads/2026/10/minimalist_red_accented_sweeping_broom_icon.png",
+      "usedOnLp1": false
+    }
+  ]
+}
