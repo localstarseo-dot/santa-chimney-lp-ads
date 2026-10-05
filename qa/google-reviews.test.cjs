@@ -30,7 +30,7 @@ function element(attributes = {}) {
   };
 }
 
-function fixture({ autoplay = true, mobile = false, reduced = false, staticReviews = false, intersectionAvailable = true } = {}) {
+function fixture({ autoplay = true, mobile = false, reduced = false, staticReviews = false, intersectionAvailable = true, controls = true } = {}) {
   const section = element({
     ...(autoplay ? { 'data-scs-reviews-autoplay': '' } : {}),
     ...(staticReviews ? { 'data-scs-reviews-static': '' } : {})
@@ -55,8 +55,8 @@ function fixture({ autoplay = true, mobile = false, reduced = false, staticRevie
     '[data-scs-reviews-track]': track,
     '[data-scs-reviews-group]': original,
     '.scs-google-reviews__viewport': viewport,
-    '.scs-google-reviews__mobile-hint': hint,
-    '[data-scs-reviews-pause]': pause
+    '.scs-google-reviews__mobile-hint': controls ? hint : null,
+    '[data-scs-reviews-pause]': controls ? pause : null
   };
   section.querySelector = selector => selectors[selector];
   const document = element();
@@ -142,6 +142,17 @@ legacy.manual.matches = false;
 legacy.manual.emit('change');
 assert.equal(legacy.track.children.length, 1);
 
+for (const mobile of [false, true]) {
+  const withoutControls = fixture({ mobile, controls: false });
+  assert.equal(withoutControls.track.children.length, 1, 'LP 1 loops without visible controls');
+  assert.match(withoutControls.viewport.getAttribute('aria-label'), /Focus or press and hold/);
+  assert.doesNotMatch(withoutControls.viewport.getAttribute('aria-label'), /button/);
+  withoutControls.motion.matches = true;
+  withoutControls.motion.emit('change');
+  assert.equal(withoutControls.track.children.length, 0);
+  assert.match(withoutControls.viewport.getAttribute('aria-label'), /Scroll to read more/);
+}
+
 const css = fs.readFileSync(path.resolve(__dirname, '../src/styles/shared.css'), 'utf8');
 assert.match(css, /@keyframes scs-repair-reviews-marquee\s*\{\s*from\s*\{\s*transform: translate3d\(0, 0, 0\);\s*\}\s*to\s*\{\s*transform: translate3d\(-50%, 0, 0\);/);
 const reviews = html => new Map([...html.matchAll(/<article\b[^>]*aria-label="([^"]+)"[\s\S]*?<blockquote>\s*<p>([\s\S]*?)<\/p>[\s\S]*?<\/article>/g)]
@@ -150,4 +161,4 @@ const supplied = reviews(fs.readFileSync(path.resolve(__dirname, '../sources/sup
 const current = reviews(fs.readFileSync(path.resolve(__dirname, '../src/pages/lp-1.html'), 'utf8'));
 assert.equal(current.size, 3);
 for (const [label, quote] of current) assert.equal(quote, supplied.get(label), 'preserve supplied quote: ' + label);
-console.log('Reviews: desktop/mobile autoplay, one inert clone, pause/resume, resize, visibility, reduced motion, fallbacks, right-to-left keyframes and original quotes passed');
+console.log('Reviews: desktop/mobile autoplay, one inert clone, optional controls, control-free labels, resize, visibility, reduced motion, fallbacks, right-to-left keyframes and original quotes passed');

@@ -72,7 +72,8 @@ for (const [index, comparison] of comparisons.entries()) {
 if ((repairPage.match(/class="sc-repair-problem"/g) || []).length !== 6) throw new Error('Expected six repair problem cards');
 if ((repairPage.match(/class="scs-google-reviews__card"/g) || []).length !== 3) throw new Error('Expected three repair-focused reviews');
 requireMatch(/data-scs-reviews-autoplay/, 'Repair reviews must enable the requested automatic loop');
-requireMatch(/data-scs-reviews-pause[^>]*aria-pressed="false"[^>]*hidden/, 'Review autoplay needs its progressively enabled pause control');
+if (/data-scs-reviews-pause|scs-google-reviews__mobile-hint|scs-google-reviews__disclosure/.test(repairPage)) throw new Error('Removed review controls and notes must not return');
+requireMatch(/class="sc-repair-reviews__summary"[\s\S]*?4\.9 Google Rating[\s\S]*?View Google Reviews[\s\S]*?<\/header>/, 'Review rating and link must be in the section header');
 if (/data-scs-reviews-static/.test(repairPage)) throw new Error('The old static review modifier must not block autoplay');
 if ((repairPage.match(/data-sc-preview-form/g) || []).length !== 2) throw new Error('Keep only the sticky and popup preview forms');
 if (/<details[^>]*id="all-services"[^>]*\sopen(?:\s|>)/.test(repairPage)) throw new Error('All Services must start collapsed');

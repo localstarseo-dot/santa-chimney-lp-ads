@@ -23,7 +23,9 @@
       ? (manuallyPaused ? "Reviews paused. Resume when you're ready." : "Reviews move automatically. Pause to read.")
       : "Swipe or scroll to read more reviews.";
     if (viewport) viewport.setAttribute("aria-label", animated
-      ? "Selected Google customer reviews. Use the Pause reviews button to stop movement."
+      ? (pauseButton
+        ? "Selected Google customer reviews. Use the Pause reviews button to stop movement."
+        : "Selected Google customer reviews. Focus or press and hold the reviews to pause movement.")
       : "Selected Google customer reviews. Scroll to read more.");
     if (pauseButton) {
       pauseButton.hidden = !animated;
