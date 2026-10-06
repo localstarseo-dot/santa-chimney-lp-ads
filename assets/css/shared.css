@@ -2649,6 +2649,12 @@ body.sc-voucher-modal-open {
   }
 }
 
+@media (max-width: 360px) {
+  .sc-repair-hero.sc-ads-hero .sc-ads-trust__reviews { gap: 6px; }
+  .sc-repair-hero.sc-ads-hero .sc-ads-trust__platform--google { width: 60px; }
+  .sc-repair-hero.sc-ads-hero .sc-ads-trust__platform--yelp { width: 46px; }
+  .sc-repair-hero.sc-ads-hero .sc-ads-trust__reviewers img { width: 22px; height: 22px; flex-basis: 22px; }
+}
 @media (max-width: 640px) {
   #our-work.sc-ads-work {
     padding-block: 4rem;
@@ -4902,13 +4908,22 @@ body.sc-voucher-modal-open {
 .sc-repair-photo strong { font-size: 13px; font-weight: 650; line-height: 1.4; }
 .sc-repair-photo span { font-size: 11px; line-height: 1.5; }
 .sc-repair-hero__photo .sc-repair-photo { min-height: 420px; border-color: #5a5e5d; background: #222627; color: #b9c0c0; border-radius: 12px; }
-.sc-repair-hero .sc-ads-trust { grid-area: trust; display: grid; max-width: none; width: 100%; margin: 0; padding-top: 24px; border-top: 1px solid #ffffff38; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: "reviews rating" "badges payments"; align-items: center; gap: 20px 24px; text-align: left; }
-.sc-repair-hero .sc-ads-trust__reviews { grid-area: reviews; display: flex; justify-content: flex-start; }
+.sc-repair-hero .sc-ads-trust { display: grid; max-width: none; width: 100%; margin: 0 0 24px; padding: 0; border-top: 0; grid-template-columns: minmax(0, 1fr); grid-template-areas: "reviews" "badges"; align-items: center; gap: 18px; text-align: left; }
+.sc-repair-hero .sc-ads-trust__reviews { grid-area: reviews; display: flex; justify-content: flex-start; align-items: center; gap: 18px; }
+.sc-repair-hero .sc-ads-trust__reviews .sc-ads-trust__rating { margin: 0; gap: 10px; flex: 0 0 auto; }
+.sc-repair-hero .sc-ads-trust__credentials-row { grid-area: badges; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 24px; width: 100%; }
+.sc-repair-hero .sc-ads-trust__credentials-row .sc-ads-trust__badges { grid-area: auto; }
+.sc-repair-hero .sc-ads-trust__credentials-row .sc-ads-payments { grid-area: auto; margin: 0; }
+@media (min-width: 641px) {
+  .sc-repair-hero .sc-ads-trust__credentials-row { grid-template-columns: auto auto; justify-content: start; gap: 28px; padding-top: 22px; }
+  .sc-repair-hero .sc-ads-trust__credentials-row .sc-ads-payments { position: relative; display: flex; }
+  .sc-repair-hero .sc-ads-trust__credentials-row .sc-ads-payments__label { position: absolute; bottom: calc(100% + 6px); left: 0; width: 100%; line-height: 16px; white-space: nowrap; }
+}
 .sc-repair-hero .sc-ads-trust__rating { grid-area: rating; width: fit-content; margin: 0; justify-self: end; }
 .sc-repair-hero .sc-ads-trust__badges { grid-area: badges; display: flex; width: auto; margin: 0; gap: 16px; justify-content: flex-start; }
 .sc-repair-hero .sc-ads-trust__badges li { width: 44px; height: 44px; }
 .sc-repair-hero .sc-ads-trust__badges img { max-width: 44px; max-height: 44px; }
-.sc-repair-hero .sc-ads-payments { grid-area: payments; display: grid; max-width: 100%; align-items: center; justify-items: center; justify-self: end; gap: 8px; margin: 0; text-align: center; }
+.sc-repair-hero .sc-ads-payments { display: grid; max-width: 100%; align-items: center; justify-items: center; gap: 8px; margin: 20px 0 0; text-align: center; }
 .sc-repair-hero .sc-ads-payments__label { margin: 0; }
 .sc-repair-hero .sc-ads-payments__cards { width: 248px; max-width: 100%; margin: 0; }
 .sc-repair-hero .sc-ads-payments__cards li { height: 34px; }
@@ -5164,10 +5179,29 @@ body.sc-voucher-modal-open {
   .sc-repair-hero .sc-ads-hero__copy { font-size: 14px; margin-block: 16px 22px; line-height: 1.6; }
   .sc-repair-hero .sc-ads-hero__actions, .sc-repair-final .sc-ads-hero__actions { display: grid; grid-template-columns: 1fr; width: 100%; gap: 12px; }
   .sc-repair-hero .sc-ads-hero__button, .sc-repair-final .sc-ads-hero__button { width: 100%; }
-  .sc-repair-hero .sc-ads-trust { grid-template-columns: minmax(0, 1fr); grid-template-areas: "reviews" "rating" "badges" "payments"; justify-items: center; gap: 18px; padding-top: 22px; text-align: center; }
+  .sc-repair-hero .sc-ads-trust { grid-template-columns: minmax(0, 1fr); grid-template-areas: "reviews" "badges"; justify-items: center; gap: 16px; padding-top: 0; text-align: center; }
   .sc-repair-hero .sc-ads-trust__reviews { justify-content: center; }
+  .sc-repair-hero .sc-ads-trust__reviews { gap: 10px; }
+  .sc-repair-hero .sc-ads-trust__platform--google { width: 74px; }
+  .sc-repair-hero .sc-ads-trust__platform--yelp { width: 56px; }
+  .sc-repair-hero .sc-ads-trust__reviews .sc-ads-trust__rating { gap: 6px; }
+  .sc-repair-hero .sc-ads-trust__reviewers { padding-left: 0; }
+  .sc-repair-hero .sc-ads-trust__reviewers img { width: 28px; height: 28px; flex-basis: 28px; margin-left: -9px; }
+  .sc-repair-hero .sc-ads-trust__reviewers img:first-child { margin-left: 0; }
+  .sc-repair-hero .sc-ads-trust__stars { font-size: 11px; }
+  .sc-repair-hero .sc-ads-trust__rating-line { gap: 4px; }
+  .sc-repair-hero .sc-ads-trust__rating-line strong { font-size: 14px; }
   .sc-repair-hero .sc-ads-trust__rating { justify-self: center; }
   .sc-repair-hero .sc-ads-trust__badges { justify-content: center; }
+  .sc-repair-hero .sc-ads-trust__credentials-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding-top: 22px; }
+  .sc-repair-hero .sc-ads-trust__credentials-row .sc-ads-trust__badges { gap: 5px; width: 100%; align-items: center; }
+  .sc-repair-hero .sc-ads-trust__credentials-row .sc-ads-trust__badges li { width: clamp(28px, 8.5vw, 38px); height: 40px; flex: 0 1 auto; }
+  .sc-repair-hero .sc-ads-trust__credentials-row .sc-ads-trust__badges img { max-width: 100%; max-height: 40px; }
+  .sc-repair-hero .sc-ads-trust__credentials-row .sc-ads-payments { position: relative; display: flex; width: 100%; }
+  .sc-repair-hero .sc-ads-trust__credentials-row .sc-ads-payments__label { position: absolute; bottom: calc(100% + 6px); left: 0; width: 100%; font-size: 11px; line-height: 16px; white-space: nowrap; }
+  .sc-repair-hero .sc-ads-trust__credentials-row .sc-ads-payments__cards { width: 100%; gap: 5px; }
+  .sc-repair-hero .sc-ads-trust__credentials-row .sc-ads-payments__cards li { height: 24px; padding: 2px; }
+  .sc-repair-hero .sc-ads-trust__credentials-row .sc-ads-payments__cards img { height: 18px; }
   .sc-repair-hero .sc-ads-payments { justify-self: center; justify-content: center; gap: 10px; }
   .sc-repair-hero .sc-ads-payments__cards { width: min(248px, 100%); }
   .sc-repair-problems { grid-template-columns: 1fr; gap: 12px; }
