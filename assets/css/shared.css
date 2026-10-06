@@ -4944,7 +4944,8 @@ body.sc-voucher-modal-open {
 .sc-repair-work .sc-repair-heading { margin-inline: auto; text-align: center; }
 .sc-repair-work .sc-repair-heading > p { margin-inline: auto; }
 .sc-repair-work .sc-repair-project { display: flex; flex-direction: column; text-align: center; }
-.sc-repair-work .sc-repair-project__head { align-items: center; justify-content: center; }
+.sc-repair-work .sc-repair-project__head { align-items: flex-end; justify-content: center; min-height: 64px; margin-bottom: 16px; }
+.sc-repair-work .sc-repair-project__head h3 { font-size: clamp(22px, 2vw, 24px); line-height: 1.3; text-wrap: balance; }
 .sc-repair-work .sc-repair-project__body { flex: 1; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--repair-line); }
 .sc-repair-work .sc-repair-project__details { margin: 0; font-size: 14px; line-height: 1.65; }
 .sc-repair-work .sc-repair-project__details > div + div { margin-top: 12px; }
@@ -4962,8 +4963,18 @@ body.sc-voucher-modal-open {
 @media (prefers-reduced-motion: reduce) {
   .sc-repair-work .sc-repair-project__cta { animation: none !important; }
 }
-#scs-service-stats.sc-repair-proof { padding-block: clamp(44px, 5vw, 64px); border-block: 1px solid var(--repair-line); background: #f8f5ef; }
+#scs-service-stats.sc-repair-proof {
+  padding-block: clamp(44px, 5vw, 68px);
+  border-block: 1px solid #ebe4dc;
+  background: radial-gradient(circle at 0% 20%, rgba(187,27,28,.07), transparent 30%), radial-gradient(circle at 100% 80%, rgba(216,146,56,.07), transparent 28%), linear-gradient(rgba(15,18,20,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(15,18,20,.025) 1px, transparent 1px), #fff;
+  background-size: auto, auto, 64px 64px, 64px 64px, auto;
+}
 #scs-service-stats.sc-repair-proof::before { display: none; }
+#scs-service-stats .scs-stats-pro__eyebrow { color: #bb1b1c; }
+#scs-service-stats .scs-stats-pro__title,
+#scs-service-stats .scs-stats-pro__number { font-family: Georgia, "Times New Roman", serif; }
+#scs-service-stats .scs-stats-pro__icon { color: #bb1b1c; border-color: rgba(187,27,28,.19); background: #fff3f1; }
+#scs-service-stats .scs-stats-pro__number { white-space: nowrap; }
 .sc-repair-proof__layout { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: center; gap: 32px 48px; }
 .sc-repair-proof .sc-repair-heading { max-width: 420px; margin: 0; }
 .sc-repair-proof .sc-repair-heading h2 { font-size: clamp(28px, 3vw, 38px); line-height: 1.15; }
@@ -5127,7 +5138,7 @@ body.sc-voucher-modal-open {
   .sc-repair-heading--split { display: block; }
   .sc-repair-heading--split > p { margin-top: 14px !important; max-width: 600px !important; }
   .sc-repair-projects { grid-template-columns: 1fr; gap: 32px; }
-  .sc-repair-project__head { min-height: 0; }
+  .sc-repair-work .sc-repair-project__head { min-height: 0; }
   .sc-repair-project__photos .sc-repair-photo { aspect-ratio: 4 / 3; }
   .sc-repair-proof__layout { grid-template-columns: 1fr; gap: 24px; }
   .sc-repair-proof .sc-repair-heading { max-width: 520px; }

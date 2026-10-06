@@ -9,9 +9,17 @@ const section = id => source.match(new RegExp('<section\\b[^>]*id="' + id + '"[\
 const anchors = html => [...html.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)]
   .map(([, href, text]) => [href, text.replace(/<span[^>]*>[\s\S]*?<\/span>/g, '').replace(/\s+/g, ' ').trim()]);
 
+const problemCards = [...section('repair-problems').matchAll(/<a class="sc-repair-problem" href="([^"]+)"/g)];
+assert.equal(problemCards.length, 6, 'all six problem cards remain present');
+assert.ok(problemCards.every(([, href]) => href === '#our-work'), 'every View Repair card navigates to Our Work');
+assert.match(section('our-work'), /See Real Chimney Repairs/, 'same-page destination exists');
+
 const proof = section('scs-service-stats');
 assert.match(proof, /data-scs-counter-group/);
-assert.match(proof, /data-scs-end="874" data-scs-suffix="\+">874\+<\/strong>/);
+assert.match(proof, /data-scs-end="874" data-scs-format="comma">874<\/strong>/);
+assert.match(proof, /data-scs-end="831" data-scs-format="comma">831<\/strong>/);
+assert.match(proof, /data-scs-end="1478" data-scs-format="comma">1,478<\/strong>/);
+assert.equal((proof.match(/data-scs-counter /g) || []).length, 4);
 assert.match(proof, /data-scs-end="20" data-scs-suffix="\+">20\+<\/strong>/);
 assert.doesNotMatch(proof, /sc-repair-proof__credentials|Service credentials|<img\b/, 'removed experience credential strip must not return');
 const heroBadges = section('home').match(/<ul class="sc-ads-trust__badges"[\s\S]*?<\/ul>/)?.[0] || '';
