@@ -50,6 +50,19 @@ const cleaningModal = modal
   .replace('LIMITED-TIME REPAIR VOUCHER', 'LIMITED-TIME CHIMNEY SWEEP VOUCHER')
   .replace('$99 OFF', 'Get 20% OFF')
   .replace('CHIMNEY REPAIR', 'for Chimney Sweep');
+const inspectionHeader = header
+  .replace('id="sc-ppc-header"', 'id="sc-ppc-header" data-sc-landing-page="inspection"')
+  .replace('data-campaign="repair"', 'data-campaign="inspection"')
+  .replace('data-service="Chimney Repair"', 'data-service="Chimney Inspection"')
+  .replace('data-offer="$99 OFF"', 'data-offer="20% OFF"')
+  .replace('sc_staging_lp_1_repair_offer_expiry_59m_v1', 'sc_staging_lp_3_inspection_offer_expiry_59m_v1')
+  .replaceAll('$99 VOUCHER RESERVED', 'Get 20% OFF Chimney Inspection')
+  .replaceAll('$99 OFF CHIMNEY REPAIR', '20% OFF CHIMNEY INSPECTION')
+  .replaceAll('$99 OFF', '20% OFF');
+const inspectionModal = modal
+  .replace('LIMITED-TIME REPAIR VOUCHER', 'LIMITED-TIME CHIMNEY INSPECTION VOUCHER')
+  .replace('$99 OFF', 'Get 20% OFF')
+  .replace('CHIMNEY REPAIR', 'Chimney Inspection');
 
 const document = (title, body, page = false) => `<!doctype html>
 <html lang="en">
@@ -76,7 +89,7 @@ for (const [number, service] of [[2, 'Chimney Cleaning & Sweep'], [3, 'Chimney I
   const body = read('src/pages/lp-' + number + '.html');
   const contents = number === 2
     ? cleaningHeader + '\n' + body + '\n' + clean(footerSource) + '\n' + clean(floatingSource) + '\n' + cleaningModal
-    : body;
+    : inspectionHeader + '\n' + body + '\n' + clean(footerSource) + '\n' + clean(floatingSource) + '\n' + inspectionModal;
   write('lp-' + number + '/index.html', document('Santa Chimney | LP ' + number + ' ' + service + ' staging', contents, true));
 }
 write('index.html', document('Santa Chimney | Landing page staging', `<main class="sc-staging-preview"><section class="sc-staging-preview__section">
@@ -86,12 +99,12 @@ write('index.html', document('Santa Chimney | Landing page staging', `<main clas
   <ul class="sc-staging-preview__variants">
     <li><a href="lp-1/">LP 1 · Chimney Repair</a> · Approved repair page. Staging preview only.</li>
     <li><a href="lp-2/">LP 2 · Chimney Cleaning &amp; Sweep</a> · Cleaning-focused template with three supplied before/after photo pairs.</li>
-    <li><a href="lp-3/">LP 3 · Chimney Inspections</a> · Separate page awaiting inspection-focused content.</li>
+    <li><a href="lp-3/">LP 3 · Chimney Inspections</a> · Inspection-focused template with five hero photos and three inspection photo cards.</li>
     <li>LP 4 · Awaiting supplied page code.</li>
   </ul>
   <p>Preview forms do not submit leads. These pages are for development review.</p>
 </section></main>`));
-write('assets/css/shared.css', ['shared.css', 'cleaning.css', 'footer.css', 'floating-actions.css'].map(file => read('src/styles/' + file)).join('\n\n'));
+write('assets/css/shared.css', ['shared.css', 'cleaning.css', 'inspection.css', 'footer.css', 'floating-actions.css'].map(file => read('src/styles/' + file)).join('\n\n'));
 write('assets/css/preview.css', read('src/styles/preview.css'));
 for (const file of ['header.js', 'voucher-modal.js', 'preview-forms.js', 'service-stats.js', 'comparison.js', 'google-reviews.js', 'hero-slideshow.js']) write('assets/js/' + file, read('src/scripts/' + file));
 write('wordpress/header-and-popup.gutenberg.html', headerSource + '\n' + modalSource);

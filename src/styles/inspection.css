@@ -1,0 +1,52 @@
+/* LP 3 retains the shared sticky layout while its longer offer label wraps. */
+#sc-ppc-header[data-sc-landing-page="inspection"] .sc-ppc-sticky-offer strong.sc-ppc-desktop-form-label {
+  white-space: normal;
+}
+
+/* LP 3 shows inspection photography rather than transformation sliders. */
+.sc-inspection-page .sc-inspection-photo {
+  overflow: hidden;
+  aspect-ratio: 1;
+  margin: 0;
+  border: 1px solid var(--repair-line);
+  border-radius: 8px;
+  background: #25292b;
+}
+
+.sc-inspection-page .sc-inspection-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sc-inspection-page .sc-inspection-project__copy {
+  margin: 0;
+  color: var(--repair-muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* Keep the approved panel, showing only inspection-related supplied figures. */
+.sc-inspection-page #scs-service-stats .scs-stats-pro__panel {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sc-inspection-page #scs-service-stats .scs-stats-pro__item {
+  border-bottom: 0;
+}
+
+.sc-inspection-page #scs-service-stats .scs-stats-pro__item:last-child {
+  border-right: 0;
+}
+
+@media (max-width: 390px) {
+  .sc-inspection-page #scs-service-stats .scs-stats-pro__panel {
+    grid-template-columns: 1fr;
+  }
+
+  .sc-inspection-page #scs-service-stats .scs-stats-pro__item:first-child {
+    border-right: 0;
+    border-bottom: 1px solid var(--scs-stats-divider);
+  }
+}
