@@ -295,10 +295,9 @@
   .sc-ppc-header-system .sc-ppc-offer-copy--mobile { display: inline-flex; }
   .sc-ppc-header-system .sc-ppc-nav-inner { width: calc(100% - 16px); min-height: 64px; gap: 4px; }
   .sc-ppc-header-system .sc-ppc-logo img { width: 112px; }
-  .sc-ppc-header-system .sc-ppc-home-link { display: none !important; }
   .sc-ppc-header-system .sc-ppc-links { gap: 0; }
-  .sc-ppc-header-system .sc-ppc-links a { padding-inline: 5px; font-size: 11px; }
-  .sc-ppc-header-system .sc-ppc-nav .sc-ppc-button { padding: 8px; font-size: 11px; }
+  .sc-ppc-header-system .sc-ppc-links a { padding-inline: 5px; font-size: 11px; white-space: nowrap; }
+  .sc-ppc-header-system .sc-ppc-nav .sc-ppc-button { padding: 8px; font-size: 11px; white-space: nowrap; }
   .sc-ppc-header-system.is-past-hero .sc-ppc-lead {
     width: calc(100% - 24px);
     grid-template-columns: minmax(0, 1fr);

@@ -4,7 +4,7 @@ const path = require('node:path');
 
 const read = file => fs.readFileSync(path.resolve(__dirname, '..', file), 'utf8');
 const source = read('src/pages/lp-1.html');
-assert.ok(read('lp-1/index.html').includes(source.trim()), 'rebuild output from the editable body');
+assert.ok(read('lp-1/index.html').includes(source.trim()), 'rebuild LP 1 output from the editable body');
 const section = id => source.match(new RegExp('<section\\b[^>]*id="' + id + '"[\\s\\S]*?<\\/section>'))?.[0] || '';
 const anchors = html => [...html.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)]
   .map(([, href, text]) => [href, text.replace(/<span[^>]*>[\s\S]*?<\/span>/g, '').replace(/\s+/g, ' ').trim()]);

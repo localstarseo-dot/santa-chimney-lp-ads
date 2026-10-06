@@ -38,6 +38,8 @@ const header = clean(headerSource).replace(/data-expiry-key="[^"]+"/, 'data-expi
 const modal = clean(modalSource);
 // LP-specific offer copy, while retaining the approved global component markup.
 const cleaningHeader = header
+  .replace('href="#repair-services"', 'href="#cleaning-services"')
+  .replace('href="#repair-questions"', 'href="#cleaning-questions"')
   .replace('id="sc-ppc-header"', 'id="sc-ppc-header" data-sc-landing-page="cleaning"')
   .replace('data-campaign="repair"', 'data-campaign="cleaning"')
   .replace('data-service="Chimney Repair"', 'data-service="Chimney Sweep"')
@@ -51,6 +53,8 @@ const cleaningModal = modal
   .replace('$99 OFF', 'Get 20% OFF')
   .replace('CHIMNEY REPAIR', 'for Chimney Sweep');
 const inspectionHeader = header
+  .replace('href="#repair-services"', 'href="#inspection-services"')
+  .replace('href="#repair-questions"', 'href="#inspection-questions"')
   .replace('id="sc-ppc-header"', 'id="sc-ppc-header" data-sc-landing-page="inspection"')
   .replace('data-campaign="repair"', 'data-campaign="inspection"')
   .replace('data-service="Chimney Repair"', 'data-service="Chimney Inspection"')

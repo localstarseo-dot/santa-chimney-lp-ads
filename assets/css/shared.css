@@ -295,10 +295,9 @@
   .sc-ppc-header-system .sc-ppc-offer-copy--mobile { display: inline-flex; }
   .sc-ppc-header-system .sc-ppc-nav-inner { width: calc(100% - 16px); min-height: 64px; gap: 4px; }
   .sc-ppc-header-system .sc-ppc-logo img { width: 112px; }
-  .sc-ppc-header-system .sc-ppc-home-link { display: none !important; }
   .sc-ppc-header-system .sc-ppc-links { gap: 0; }
-  .sc-ppc-header-system .sc-ppc-links a { padding-inline: 5px; font-size: 11px; }
-  .sc-ppc-header-system .sc-ppc-nav .sc-ppc-button { padding: 8px; font-size: 11px; }
+  .sc-ppc-header-system .sc-ppc-links a { padding-inline: 5px; font-size: 11px; white-space: nowrap; }
+  .sc-ppc-header-system .sc-ppc-nav .sc-ppc-button { padding: 8px; font-size: 11px; white-space: nowrap; }
   .sc-ppc-header-system.is-past-hero .sc-ppc-lead {
     width: calc(100% - 24px);
     grid-template-columns: minmax(0, 1fr);
@@ -5733,6 +5732,7 @@ body.sc-voucher-modal-open {
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 1.5rem;
   text-align: left;
   border-top: 1px solid var(--sc-footer-border);
@@ -5747,6 +5747,30 @@ body.sc-voucher-modal-open {
 
 .sc-ads-footer__bottom strong {
   color: #cccccc;
+}
+
+.sc-ads-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem 0.75rem;
+}
+
+.sc-ads-footer__links a {
+  display: inline-flex;
+  min-height: 44px;
+  padding: 0.25rem 0.35rem;
+  align-items: center;
+  color: var(--sc-footer-muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.sc-ads-footer__links a:hover {
+  color: var(--sc-footer-white);
 }
 
 /* Hover and focus */

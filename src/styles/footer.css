@@ -287,6 +287,7 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 1.5rem;
   text-align: left;
   border-top: 1px solid var(--sc-footer-border);
@@ -301,6 +302,30 @@
 
 .sc-ads-footer__bottom strong {
   color: #cccccc;
+}
+
+.sc-ads-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem 0.75rem;
+}
+
+.sc-ads-footer__links a {
+  display: inline-flex;
+  min-height: 44px;
+  padding: 0.25rem 0.35rem;
+  align-items: center;
+  color: var(--sc-footer-muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.sc-ads-footer__links a:hover {
+  color: var(--sc-footer-white);
 }
 
 /* Hover and focus */
