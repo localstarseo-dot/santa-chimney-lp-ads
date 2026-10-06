@@ -4974,10 +4974,6 @@ body.sc-voucher-modal-open {
 .sc-repair-badges { display: flex; padding: 0; margin: 0; list-style: none; align-items: center; justify-content: center; gap: 20px; }
 .sc-repair-badges li { display: grid; width: 58px; height: 64px; place-items: center; }
 .sc-repair-badges img { display: block; max-width: 58px; width: 100%; height: 58px; object-fit: contain; }
-.sc-repair-proof__credentials { display: grid; grid-column: 1 / -1; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: center; gap: 48px; padding: 24px 32px; border-radius: 12px; background: #222627; }
-.sc-repair-proof__credential-label { margin: 0; color: #d5d9da; font-size: 12px; font-weight: 600; line-height: 1.4; letter-spacing: .08em; text-transform: uppercase; }
-.sc-repair-proof .sc-repair-badges { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
-.sc-repair-proof .sc-repair-badges li { width: auto; min-width: 0; height: 64px; }
 #scs-reviews.sc-repair-reviews {
   --scs-reviews-bg: #1c1c1c;
   --scs-reviews-panel: #25292b;
@@ -5135,7 +5131,6 @@ body.sc-voucher-modal-open {
   .sc-repair-project__photos .sc-repair-photo { aspect-ratio: 4 / 3; }
   .sc-repair-proof__layout { grid-template-columns: 1fr; gap: 24px; }
   .sc-repair-proof .sc-repair-heading { max-width: 520px; }
-  .sc-repair-proof__credentials { gap: 24px; padding: 24px; }
   #scs-reviews.sc-repair-reviews .scs-google-reviews__header { grid-template-columns: 1fr; gap: 24px; }
   .sc-repair-reviews__summary { gap: 12px; }
   .sc-repair-directory__intro { flex-direction: column; align-items: flex-start; gap: 20px; }
@@ -5174,8 +5169,6 @@ body.sc-voucher-modal-open {
   .sc-repair-proof__numbers > div { min-height: 138px; padding: 20px 10px; }
   .sc-repair-proof__numbers strong { font-size: 42px; }
   .sc-repair-proof__numbers span { font-size: 13px; }
-  .sc-repair-proof__credentials { grid-template-columns: 1fr; gap: 18px; padding: 24px 16px; text-align: center; }
-  .sc-repair-proof .sc-repair-badges { gap: 12px; }
   .sc-repair-badges { gap: 14px; }
   .sc-repair-directory .sc-repair-link-grid { grid-template-columns: 1fr; }
   .sc-repair-service-group > summary { grid-template-columns: minmax(0, 1fr) 24px; gap: 4px 12px; padding: 18px 16px; }
