@@ -8,7 +8,7 @@
   overflow: hidden;
   aspect-ratio: 1;
   margin: 0;
-  border: 1px solid var(--repair-line);
+  border: 0;
   border-radius: 8px;
   background: #25292b;
 }
@@ -18,6 +18,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* The supplied photos include thin white edge strips. Crop only those edges. */
+  transform: scale(1.03);
 }
 
 .sc-inspection-page .sc-inspection-project__copy {

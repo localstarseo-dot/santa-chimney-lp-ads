@@ -1386,7 +1386,7 @@ body.sc-voucher-modal-open {
 }
 
 .sc-ads-trust__stars {
-  color: #f5b83d;
+  color: #ebb305;
 
   font-size: 0.95rem;
   letter-spacing: 0.02em;
@@ -2746,7 +2746,7 @@ body.sc-voucher-modal-open {
   --scs-reviews-subtle: #667177;
   --scs-reviews-border: #e1e5e8;
   --scs-reviews-red: #bb1b1c;
-  --scs-reviews-gold-text: #a36612;
+  --scs-reviews-gold-text: #ebb305;
   --scs-reviews-gap: 1rem;
   --scs-reviews-max: 75rem;
   --scs-reviews-speed: 58s;
@@ -4887,8 +4887,9 @@ body.sc-voucher-modal-open {
 .sc-repair-hero__copy { grid-area: copy; }
 .sc-repair-hero__copy .sc-ads-hero__title,
 .sc-repair-hero__copy .sc-ads-hero__copy { text-align: left; }
-.sc-repair-hero .sc-ads-hero__eyebrow { margin: 0 0 18px; color: #f4b568; }
-.sc-repair-hero .sc-ads-hero__eyebrow::before { display: none; }
+.sc-repair-hero .sc-ads-hero__eyebrow { margin: 0 0 18px; color: #ff4d4f; }
+.sc-repair-hero .sc-ads-hero__eyebrow::before,
+.sc-repair-hero .sc-ads-hero__eyebrow::after { display: none; }
 .sc-repair-hero .sc-ads-hero__title { margin: 0; max-width: 640px; font-size: clamp(44px, 4.3vw, 64px); line-height: 1.06; letter-spacing: -.04em; text-wrap: balance; }
 .sc-repair-hero .sc-ads-hero__copy { margin: 18px 0 26px; max-width: 600px; font-size: 16px; line-height: 1.65; color: #e0e2e3; }
 .sc-repair-hero .sc-ads-hero__actions { display: grid; width: 100%; margin: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
@@ -5007,7 +5008,7 @@ body.sc-voucher-modal-open {
   --scs-reviews-muted: #c6cbcc;
   --scs-reviews-subtle: #aab3b8;
   --scs-reviews-border: #42494c;
-  --scs-reviews-gold-text: #f4b568;
+  --scs-reviews-gold-text: #ebb305;
   --scs-reviews-gap: 20px;
   --scs-reviews-speed: 40s;
   padding-block: clamp(48px, 6vw, 80px);
@@ -5018,7 +5019,7 @@ body.sc-voucher-modal-open {
 #scs-reviews.sc-repair-reviews .scs-google-reviews__intro { max-width: 640px; }
 .sc-repair-reviews__summary { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
 .sc-repair-reviews__summary p { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin: 0; color: #f6f6f4; font-size: 15px; line-height: 1.5; }
-.sc-repair-reviews__summary p > span { color: #f4b568; font-size: 17px; letter-spacing: .02em; }
+.sc-repair-reviews__summary p > span { color: var(--scs-reviews-gold-text); font-size: 17px; letter-spacing: .02em; }
 #scs-reviews.sc-repair-reviews .scs-google-reviews__viewport { overflow-x: auto; overflow-y: hidden; }
 #scs-reviews.sc-repair-reviews.scs-google-reviews--enhanced .scs-google-reviews__viewport { overflow: hidden; scroll-snap-type: none; }
 #scs-reviews.sc-repair-reviews .scs-google-reviews__track { width: max-content; }
@@ -5030,7 +5031,7 @@ body.sc-voucher-modal-open {
   --scs-reviews-muted: #4e585d;
   --scs-reviews-subtle: #667177;
   --scs-reviews-border: #e1e5e8;
-  --scs-reviews-gold-text: #a36612;
+  --scs-reviews-gold-text: #ebb305;
   width: clamp(320px, 32vw, 400px);
   min-width: 0;
   min-height: 340px;
