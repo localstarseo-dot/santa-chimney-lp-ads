@@ -5384,6 +5384,12 @@ body.sc-voucher-modal-open {
 }
 
 
+/* LP 2 offer copy wraps within the approved shared sticky-form layout. */
+#sc-ppc-header[data-sc-landing-page="cleaning"] .sc-ppc-sticky-offer strong.sc-ppc-desktop-form-label {
+  white-space: normal;
+}
+
+
 .sc-ads-footer {
   --sc-footer-bg: #1c1c1c;
   --sc-footer-panel: #101010;

@@ -155,10 +155,13 @@ for (const mobile of [false, true]) {
 
 const css = fs.readFileSync(path.resolve(__dirname, '../src/styles/shared.css'), 'utf8');
 assert.match(css, /@keyframes scs-repair-reviews-marquee\s*\{\s*from\s*\{\s*transform: translate3d\(0, 0, 0\);\s*\}\s*to\s*\{\s*transform: translate3d\(-50%, 0, 0\);/);
-const reviews = html => new Map([...html.matchAll(/<article\b[^>]*aria-label="([^"]+)"[\s\S]*?<blockquote>\s*<p>([\s\S]*?)<\/p>[\s\S]*?<\/article>/g)]
+const reviews = html => new Map([...html.matchAll(/<article class="scs-google-reviews__card"[^>]*aria-label="([^"]+)"[\s\S]*?<blockquote>\s*<p>([\s\S]*?)<\/p>[\s\S]*?<\/article>/g)]
   .map(match => [match[1], match[2].replace(/\s+/g, ' ').trim()]));
 const supplied = reviews(fs.readFileSync(path.resolve(__dirname, '../sources/supplied-google-reviews.html'), 'utf8'));
 const current = reviews(fs.readFileSync(path.resolve(__dirname, '../src/pages/lp-1.html'), 'utf8'));
 assert.equal(current.size, 3);
 for (const [label, quote] of current) assert.equal(quote, supplied.get(label), 'preserve supplied quote: ' + label);
+const cleaning = reviews(fs.readFileSync(path.resolve(__dirname, '../src/pages/lp-2.html'), 'utf8'));
+assert.equal(cleaning.size, supplied.size, 'LP 2 includes the entire supplied review set');
+for (const [label, quote] of cleaning) assert.equal(quote, supplied.get(label), 'preserve supplied LP 2 quote: ' + label);
 console.log('Reviews: desktop/mobile autoplay, one inert clone, optional controls, control-free labels, resize, visibility, reduced motion, fallbacks, right-to-left keyframes and original quotes passed');

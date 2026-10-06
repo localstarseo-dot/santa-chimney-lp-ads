@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-for (const page of ['index.html', 'lp-1/index.html']) {
+for (const page of ['index.html', 'lp-1/index.html', 'lp-2/index.html', 'lp-3/index.html']) {
   const file = resolve(root, page);
   const html = readFileSync(file, 'utf8');
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
@@ -18,7 +18,13 @@ for (const page of ['index.html', 'lp-1/index.html']) {
       continue;
     }
     if (link.startsWith('/')) throw new Error('Root-relative URL breaks the Pages project path: ' + link);
-    if (!existsSync(resolve(dirname(file), link))) throw new Error('Missing local file ' + link + ' in ' + page);
+    const [localPath, fragment] = link.split('#');
+    const target = resolve(dirname(file), localPath);
+    if (!existsSync(target)) throw new Error('Missing local file ' + link + ' in ' + page);
+    if (fragment) {
+      const targetHtml = readFileSync(localPath.endsWith('/') ? resolve(target, 'index.html') : target, 'utf8');
+      if (!targetHtml.includes('id="' + fragment + '"')) throw new Error('Missing destination anchor ' + link);
+    }
   }
   console.log(page + ': static markup, anchors, IDs, and local assets passed');
 }

@@ -36,6 +36,20 @@ const floatingSource = read('src/components/floating-actions.html');
 const clean = (html) => html.replace(/<!--\s*\/?wp:[\s\S]*?-->/g, '').replace(/\[forminator_form id="(4877|4914)"\]/g, (_, id) => previewForm(id));
 const header = clean(headerSource).replace(/data-expiry-key="[^"]+"/, 'data-expiry-key="sc_staging_lp_1_repair_offer_expiry_59m_v1"');
 const modal = clean(modalSource);
+// LP-specific offer copy, while retaining the approved global component markup.
+const cleaningHeader = header
+  .replace('id="sc-ppc-header"', 'id="sc-ppc-header" data-sc-landing-page="cleaning"')
+  .replace('data-campaign="repair"', 'data-campaign="cleaning"')
+  .replace('data-service="Chimney Repair"', 'data-service="Chimney Sweep"')
+  .replace('data-offer="$99 OFF"', 'data-offer="20% OFF"')
+  .replace('sc_staging_lp_1_repair_offer_expiry_59m_v1', 'sc_staging_lp_2_cleaning_offer_expiry_59m_v1')
+  .replaceAll('$99 VOUCHER RESERVED', 'Get 20% OFF for Chimney Sweep')
+  .replaceAll('$99 OFF CHIMNEY REPAIR', '20% OFF CHIMNEY CLEANING &amp; SWEEP')
+  .replaceAll('$99 OFF', '20% OFF');
+const cleaningModal = modal
+  .replace('LIMITED-TIME REPAIR VOUCHER', 'LIMITED-TIME CHIMNEY SWEEP VOUCHER')
+  .replace('$99 OFF', 'Get 20% OFF')
+  .replace('CHIMNEY REPAIR', 'for Chimney Sweep');
 
 const document = (title, body, page = false) => `<!doctype html>
 <html lang="en">
@@ -58,20 +72,27 @@ ${body}
 
 const pageBody = read('src/pages/lp-1.html');
 write('lp-1/index.html', document('Santa Chimney | LP 1 Chimney Repair staging', header + '\n' + pageBody + '\n' + clean(footerSource) + '\n' + clean(floatingSource) + '\n' + modal, true));
+for (const [number, service] of [[2, 'Chimney Cleaning & Sweep'], [3, 'Chimney Inspections']]) {
+  const body = read('src/pages/lp-' + number + '.html');
+  const contents = number === 2
+    ? cleaningHeader + '\n' + body + '\n' + clean(footerSource) + '\n' + clean(floatingSource) + '\n' + cleaningModal
+    : body;
+  write('lp-' + number + '/index.html', document('Santa Chimney | LP ' + number + ' ' + service + ' staging', contents, true));
+}
 write('index.html', document('Santa Chimney | Landing page staging', `<main class="sc-staging-preview"><section class="sc-staging-preview__section">
   <p class="sc-staging-preview__eyebrow">Santa Chimney · Ads landing pages</p>
   <h1>Landing page staging</h1>
   <p>Review the supplied components and each landing page as it is assembled.</p>
   <ul class="sc-staging-preview__variants">
-    <li><a href="lp-1/">LP 1 · Chimney Repair</a> · Repair-first photo hero, problem cards, before/after sliders, repair proof, dark automatic reviews, service directory, FAQs, and shared footer. Hero, sticky voucher, and fixed call/booking actions remain. Staging preview only.</li>
-    <li>LP 2 · Awaiting supplied page code.</li>
-    <li>LP 3 · Awaiting supplied page code.</li>
+    <li><a href="lp-1/">LP 1 · Chimney Repair</a> · Approved repair page. Staging preview only.</li>
+    <li><a href="lp-2/">LP 2 · Chimney Cleaning &amp; Sweep</a> · Cleaning-focused template with three supplied before/after photo pairs.</li>
+    <li><a href="lp-3/">LP 3 · Chimney Inspections</a> · Separate page awaiting inspection-focused content.</li>
     <li>LP 4 · Awaiting supplied page code.</li>
   </ul>
   <p>Preview forms do not submit leads. These pages are for development review.</p>
 </section></main>`));
-write('assets/css/shared.css', ['shared.css', 'footer.css', 'floating-actions.css'].map(file => read('src/styles/' + file)).join('\n\n'));
+write('assets/css/shared.css', ['shared.css', 'cleaning.css', 'footer.css', 'floating-actions.css'].map(file => read('src/styles/' + file)).join('\n\n'));
 write('assets/css/preview.css', read('src/styles/preview.css'));
 for (const file of ['header.js', 'voucher-modal.js', 'preview-forms.js', 'service-stats.js', 'comparison.js', 'google-reviews.js', 'hero-slideshow.js']) write('assets/js/' + file, read('src/scripts/' + file));
 write('wordpress/header-and-popup.gutenberg.html', headerSource + '\n' + modalSource);
-console.log('Built staging dashboard, LP 1 sections, global components, and assets.');
+console.log('Built LP 1 Repair, separate LP 2 Cleaning and LP 3 Inspections previews, dashboard and assets.');

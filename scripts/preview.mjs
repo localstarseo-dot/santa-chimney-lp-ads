@@ -25,4 +25,4 @@ const server = createServer(async (req, res) => {
     res.end('Not found');
   }
 });
-server.listen(4173, '127.0.0.1', () => console.log('Preview: http://127.0.0.1:4173/santa-chimney-lp-ads/lp-1/'));
+server.listen(4173, '127.0.0.1', () => console.log('Preview dashboard: http://127.0.0.1:4173/santa-chimney-lp-ads/'));

@@ -278,7 +278,7 @@
 
       form.setAttribute(
         "aria-label",
-        "Claim your chimney repair voucher"
+        "Claim your " + (config.service || "Chimney Repair").toLowerCase() + " voucher"
       );
 
       submitButton = form.querySelector(
